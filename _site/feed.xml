@@ -6,8 +6,8 @@
 </description>
     <link>http://garyfeng.github.io//</link>
     <atom:link href="http://garyfeng.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 21 Nov 2015 22:39:17 -0500</pubDate>
-    <lastBuildDate>Sat, 21 Nov 2015 22:39:17 -0500</lastBuildDate>
+    <pubDate>Sat, 21 Nov 2015 22:43:54 -0500</pubDate>
+    <lastBuildDate>Sat, 21 Nov 2015 22:43:54 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -101,100 +101,6 @@ would make it impossible to sync given that my blog is inside the repo&lt;/p&gt;
         
         <category>example2</category>
         
-        
-      </item>
-    
-      <item>
-        <title>Setting up</title>
-        <description>&lt;h1 id=&quot;blogging-on-github&quot;&gt;Blogging on github?&lt;/h1&gt;
-
-&lt;p&gt;I’ve turned on the github pages for my github account. Now that I
-have a static site, I would like to blog with jekyll.&lt;/p&gt;
-
-&lt;p&gt;Following the official guide here https://help.github.com/articles/using-jekyll-with-pages/&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Checked to make sure Ruby is up to date &lt;code&gt;ruby --version&lt;/code&gt; &amp;gt;2.0&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Install bundler &lt;code&gt;sudo gem install bundler&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Go to my github page repo &lt;code&gt;garyfeng.github.io&lt;/code&gt;, created a file &lt;code&gt;Gemfile&lt;/code&gt; with
-the following content&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;
-source &#39;https://rubygems.org&#39;
-gem &#39;github-pages&#39;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;CD into the repo, did &lt;code&gt;bundle install&lt;/code&gt;. This took 5 minutes to install everything&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;jekyll new blog&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;
-Gary-MBA:garyfeng.github.io garyfeng$ jekyll new blog
-New jekyll site installed in /Users/garyfeng/github/local/garyfeng.github.io/blog.
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;then &lt;code&gt;cd blog &lt;/code&gt;. Did not do &lt;code&gt;git init&lt;/code&gt; as github instruction said, because that
-would make it impossible to sync given that my blog is inside the repo&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;serve: &lt;code&gt;kekyll serve  --watch&lt;/code&gt;, and go to http://localhost:4000/&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 21 Nov 2015 09:38:48 -0500</pubDate>
-        <link>http://garyfeng.github.io//2015/11/setting-up.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io//2015/11/setting-up.html</guid>
-        
-        
-        <category>blog_old</category>
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 21 Nov 2015 09:28:48 -0500</pubDate>
-        <link>http://garyfeng.github.io//2015/11/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io//2015/11/welcome-to-jekyll.html</guid>
-        
-        
-        <category>blog_old</category>
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
         
       </item>
     
