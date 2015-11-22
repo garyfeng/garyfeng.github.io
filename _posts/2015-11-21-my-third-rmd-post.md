@@ -13,4 +13,4 @@ Your markdown here!
 plot(1:100)
 {% endhighlight %}
 
-![plot of chunk unnamed-chunk-1](figure/source/my-third-rmd-post/2015-11-21-my-third-rmd-post/unnamed-chunk-1-1.png) 
+![plot of chunk unnamed-chunk-1](/figure/source/my-third-rmd-post/2015-11-21-my-third-rmd-post/unnamed-chunk-1-1.png) 

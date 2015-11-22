@@ -2,7 +2,7 @@
 layout: post
 title:  My first Rmd blog post!
 date: `r Sys.time()`
-published: true
+published: true 
 tags: [example1, example2]
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  My first Rmd blog post!
-date: 2015-11-21 15:16:24
+date: 2015-11-22 00:26:28
 published: true
 tags: [example1, example2]
 ---

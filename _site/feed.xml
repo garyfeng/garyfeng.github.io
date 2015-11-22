@@ -6,53 +6,9 @@
 </description>
     <link>http://garyfeng.github.io/</link>
     <atom:link href="http://garyfeng.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 22 Nov 2015 00:21:46 -0500</pubDate>
-    <lastBuildDate>Sun, 22 Nov 2015 00:21:46 -0500</lastBuildDate>
+    <pubDate>Sun, 22 Nov 2015 00:27:15 -0500</pubDate>
+    <lastBuildDate>Sun, 22 Nov 2015 00:27:15 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
-    
-      <item>
-        <title>My Third Rmd Post</title>
-        <description>&lt;p&gt;Your markdown here!&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;figure/source/my-third-rmd-post/2015-11-21-my-third-rmd-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
-</description>
-        <pubDate>Sat, 21 Nov 2015 19:21:45 -0500</pubDate>
-        <link>http://garyfeng.github.io/2015/11/my-third-rmd-post.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2015/11/my-third-rmd-post.html</guid>
-        
-        <category>example1</category>
-        
-        <category>example2</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>My second Rmd post</title>
-        <description>&lt;p&gt;Well, I thought I disabled XCode from automatically popping up. It still does.&lt;/p&gt;
-
-&lt;p&gt;Secondly, this workflow automatically adds &lt;code&gt;/knitr-jekyll&lt;/code&gt; before the URL for figures, resulting something like &lt;code&gt;/knitr-jekyllfigure/...&lt;/code&gt;. This was done at the knitr from Rmd to md. It’s in the md. &lt;/p&gt;
-
-&lt;p&gt;Then I did some test, and changed the &lt;code&gt;baseurl: &quot;&quot;&lt;/code&gt; to &lt;code&gt;baseurl: &quot;/&quot;&lt;/code&gt; in &lt;code&gt;_config.yml&lt;/code&gt;, the URL is fixed. But doing so would ruin the rest of the pages – the “about” page becomes &lt;code&gt;http://about/&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now I am going back, and just have to manually do this. &lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;figure/source/my-second-rmd-post/2015-11-21-my-second-rmd-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
-</description>
-        <pubDate>Sat, 21 Nov 2015 18:38:54 -0500</pubDate>
-        <link>http://garyfeng.github.io/2015/11/my-second-rmd-post.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2015/11/my-second-rmd-post.html</guid>
-        
-        <category>example1</category>
-        
-        <category>example2</category>
-        
-        
-      </item>
     
       <item>
         <title>My first Rmd blog post!</title>
@@ -73,9 +29,53 @@
 
 &lt;p&gt;&lt;img src=&quot;/figure/source/my-first-blog-post/2015-11-21-my-first-blog-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
 </description>
-        <pubDate>Sat, 21 Nov 2015 10:16:24 -0500</pubDate>
+        <pubDate>Sat, 21 Nov 2015 19:26:28 -0500</pubDate>
         <link>http://garyfeng.github.io/2015/11/my-first-blog-post.html</link>
         <guid isPermaLink="true">http://garyfeng.github.io/2015/11/my-first-blog-post.html</guid>
+        
+        <category>example1</category>
+        
+        <category>example2</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>My Third Rmd Post</title>
+        <description>&lt;p&gt;Your markdown here!&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/source/my-third-rmd-post/2015-11-21-my-third-rmd-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
+</description>
+        <pubDate>Sat, 21 Nov 2015 19:21:45 -0500</pubDate>
+        <link>http://garyfeng.github.io/2015/11/my-third-rmd-post.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2015/11/my-third-rmd-post.html</guid>
+        
+        <category>example1</category>
+        
+        <category>example2</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>My second Rmd post</title>
+        <description>&lt;p&gt;Well, I thought I disabled XCode from automatically popping up. It still does.&lt;/p&gt;
+
+&lt;p&gt;Secondly, this workflow automatically adds &lt;code&gt;/knitr-jekyll&lt;/code&gt; before the URL for figures, resulting something like &lt;code&gt;/knitr-jekyllfigure/...&lt;/code&gt;. This was done at the knitr from Rmd to md. It’s in the md.&lt;/p&gt;
+
+&lt;p&gt;Then I did some test, and changed the &lt;code&gt;baseurl: &quot;&quot;&lt;/code&gt; to &lt;code&gt;baseurl: &quot;/&quot;&lt;/code&gt; in &lt;code&gt;_config.yml&lt;/code&gt;, the URL is fixed. But doing so would ruin the rest of the pages – the “about” page becomes &lt;code&gt;http://about/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now I am going back, and just have to manually do this.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/source/my-second-rmd-post/2015-11-21-my-second-rmd-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
+</description>
+        <pubDate>Sat, 21 Nov 2015 18:38:54 -0500</pubDate>
+        <link>http://garyfeng.github.io/2015/11/my-second-rmd-post.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2015/11/my-second-rmd-post.html</guid>
         
         <category>example1</category>
         

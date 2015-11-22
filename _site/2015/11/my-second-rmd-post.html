@@ -64,15 +64,15 @@
   <article class="post-content">
     <p>Well, I thought I disabled XCode from automatically popping up. It still does.</p>
 
-<p>Secondly, this workflow automatically adds <code>/knitr-jekyll</code> before the URL for figures, resulting something like <code>/knitr-jekyllfigure/...</code>. This was done at the knitr from Rmd to md. It’s in the md. </p>
+<p>Secondly, this workflow automatically adds <code>/knitr-jekyll</code> before the URL for figures, resulting something like <code>/knitr-jekyllfigure/...</code>. This was done at the knitr from Rmd to md. It’s in the md.</p>
 
 <p>Then I did some test, and changed the <code>baseurl: ""</code> to <code>baseurl: "/"</code> in <code>_config.yml</code>, the URL is fixed. But doing so would ruin the rest of the pages – the “about” page becomes <code>http://about/</code>.</p>
 
-<p>Now I am going back, and just have to manually do this. </p>
+<p>Now I am going back, and just have to manually do this.</p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r">plot<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span></code></pre></div>
 
-<p><img src="figure/source/my-second-rmd-post/2015-11-21-my-second-rmd-post/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1" /> </p>
+<p><img src="/figure/source/my-second-rmd-post/2015-11-21-my-second-rmd-post/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1" /> </p>
 
   </article>
 

@@ -21,7 +21,7 @@ local({
   if (Sys.getenv('USER') == 'yihui') {
     # these settings are only for myself, and they will not apply to you, but
     # you may want to adapt them to your own website
-    knitr::opts_chunk$set(fig.path = sprintf('/%s/', gsub('^.+/', '', d)))
+    knitr::opts_chunk$set(fig.path = sprintf('%s/', gsub('^.+/', '', d)))
     knitr::opts_knit$set(
       base.dir = '~/Dropbox/Public/jekyll/',
       base.url = 'http://db.yihui.name/jekyll/'
