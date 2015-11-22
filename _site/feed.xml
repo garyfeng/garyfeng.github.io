@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>garyfeng.com</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <title>garyfeng.github.io</title>
+    <description>Site Description Goes Here.
 </description>
-    <link>http://garyfeng.github.io//</link>
-    <atom:link href="http://garyfeng.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 21 Nov 2015 22:43:54 -0500</pubDate>
-    <lastBuildDate>Sat, 21 Nov 2015 22:43:54 -0500</lastBuildDate>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 21 Nov 2015 22:52:39 -0500</pubDate>
+    <lastBuildDate>Sat, 21 Nov 2015 22:52:39 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -30,8 +30,8 @@
 &lt;p&gt;&lt;img src=&quot;/knitr-jekyllfigure/source/my-first-blog-post/2015-11-21-my-first-blog-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
 </description>
         <pubDate>Sat, 21 Nov 2015 10:16:24 -0500</pubDate>
-        <link>http://garyfeng.github.io//2015/11/my-first-blog-post.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io//2015/11/my-first-blog-post.html</guid>
+        <link>/2015/11/my-first-blog-post.html</link>
+        <guid isPermaLink="true">/2015/11/my-first-blog-post.html</guid>
         
         <category>example1</category>
         
@@ -94,8 +94,8 @@ would make it impossible to sync given that my blog is inside the repo&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 21 Nov 2015 10:07:04 -0500</pubDate>
-        <link>http://garyfeng.github.io//2015/11/setting-up.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io//2015/11/setting-up.html</guid>
+        <link>/2015/11/setting-up.html</link>
+        <guid isPermaLink="true">/2015/11/setting-up.html</guid>
         
         <category>example1</category>
         
@@ -312,8 +312,8 @@ plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quo
 &lt;/div&gt;
 </description>
         <pubDate>Sun, 28 Sep 2014 00:00:00 -0400</pubDate>
-        <link>http://garyfeng.github.io//2014/09/jekyll-with-knitr.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io//2014/09/jekyll-with-knitr.html</guid>
+        <link>/2014/09/jekyll-with-knitr.html</link>
+        <guid isPermaLink="true">/2014/09/jekyll-with-knitr.html</guid>
         
         <category>knitr</category>
         
@@ -348,8 +348,8 @@ plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quo
 
 </description>
         <pubDate>Sat, 27 Sep 2014 19:16:53 -0400</pubDate>
-        <link>http://garyfeng.github.io//2014/09/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io//2014/09/welcome-to-jekyll.html</guid>
+        <link>/2014/09/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">/2014/09/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
