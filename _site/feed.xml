@@ -6,13 +6,57 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 21 Nov 2015 22:54:48 -0500</pubDate>
-    <lastBuildDate>Sat, 21 Nov 2015 22:54:48 -0500</lastBuildDate>
+    <pubDate>Sat, 21 Nov 2015 23:47:01 -0500</pubDate>
+    <lastBuildDate>Sat, 21 Nov 2015 23:47:01 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>My Third Rmd Post</title>
+        <description>&lt;p&gt;Your markdown here!&lt;/p&gt;
 
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;figure/source/my-third-rmd-post/2015-11-21-my-third-rmd-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
+</description>
+        <pubDate>Sat, 21 Nov 2015 18:42:53 -0500</pubDate>
+        <link>/2015/11/my-third-rmd-post.html</link>
+        <guid isPermaLink="true">/2015/11/my-third-rmd-post.html</guid>
+        
+        <category>example1</category>
+        
+        <category>example2</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>My second Rmd post</title>
+        <description>&lt;p&gt;Well, I thought I disabled XCode from automatically popping up. It still does.&lt;/p&gt;
+
+&lt;p&gt;Secondly, this workflow automatically adds &lt;code&gt;/knitr-jekyll&lt;/code&gt; before the URL for figures, resulting something like &lt;code&gt;/knitr-jekyllfigure/...&lt;/code&gt;. This was done at the knitr from Rmd to md. It’s in the md. &lt;/p&gt;
+
+&lt;p&gt;Then I did some test, and changed the &lt;code&gt;baseurl: &quot;&quot;&lt;/code&gt; to &lt;code&gt;baseurl: &quot;/&quot;&lt;/code&gt; in &lt;code&gt;_config.yml&lt;/code&gt;, the URL is fixed. But doing so would ruin the rest of the pages – the “about” page becomes &lt;code&gt;http://about/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now I am going back, and just have to manually do this. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;figure/source/my-second-rmd-post/2015-11-21-my-second-rmd-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
+</description>
+        <pubDate>Sat, 21 Nov 2015 18:38:54 -0500</pubDate>
+        <link>/2015/11/my-second-rmd-post.html</link>
+        <guid isPermaLink="true">/2015/11/my-second-rmd-post.html</guid>
+        
+        <category>example1</category>
+        
+        <category>example2</category>
+        
+        
+      </item>
+    
       <item>
         <title>My first Rmd blog post!</title>
-        <description>&lt;p&gt;Following &lt;a href=&quot;http://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/&quot;&gt;this blog&lt;/a&gt; it is straightforward to set up the jekyll site. The only problem I encountered is that &lt;code&gt;XCode&lt;/code&gt; automatically jumps up to try to open the &lt;code&gt;.md&lt;/code&gt; file. This was resolved by going into system preferences, file associations, and set the default app for &lt;code&gt;.md&lt;/code&gt; to &lt;code&gt;RStudio&lt;/code&gt; rather than &lt;code&gt;XCode&lt;/code&gt;. &lt;/p&gt;
+        <description>&lt;p&gt;Following &lt;a href=&quot;http://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/&quot;&gt;this blog&lt;/a&gt; it is straightforward to set up the jekyll site. The only problem I encountered is that &lt;code&gt;XCode&lt;/code&gt; automatically jumps up to try to open the &lt;code&gt;.md&lt;/code&gt; file. This was resolved by going into system preferences, file associations, and set the default app for &lt;code&gt;.md&lt;/code&gt; to &lt;code&gt;RStudio&lt;/code&gt; rather than &lt;code&gt;XCode&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Next questions:&lt;/p&gt;
 
@@ -32,14 +76,14 @@
         <pubDate>Sat, 21 Nov 2015 10:16:24 -0500</pubDate>
         <link>/2015/11/my-first-blog-post.html</link>
         <guid isPermaLink="true">/2015/11/my-first-blog-post.html</guid>
-
+        
         <category>example1</category>
-
+        
         <category>example2</category>
-
-
+        
+        
       </item>
-
+    
       <item>
         <title>Setting up the github jekyll workflow</title>
         <description>&lt;p&gt;&lt;strong&gt;Note that this is obsolete. I am following the RMarkdown workflow now.&lt;/strong&gt;&lt;/p&gt;
@@ -96,14 +140,14 @@ would make it impossible to sync given that my blog is inside the repo&lt;/p&gt;
         <pubDate>Sat, 21 Nov 2015 10:07:04 -0500</pubDate>
         <link>/2015/11/setting-up.html</link>
         <guid isPermaLink="true">/2015/11/setting-up.html</guid>
-
+        
         <category>example1</category>
-
+        
         <category>example2</category>
-
-
+        
+        
       </item>
-
+    
       <item>
         <title>Serve Jekyll Websites with servr and knitr</title>
         <description>&lt;p&gt;The R package &lt;a href=&quot;https://github.com/yihui/servr&quot;&gt;&lt;strong&gt;servr&lt;/strong&gt;&lt;/a&gt; can be used to set up an HTTP server to serve files under a directory. Since &lt;strong&gt;servr&lt;/strong&gt; v0.2, it has added a function &lt;code&gt;servr::jekyll()&lt;/code&gt; specifically designed for websites based on Jekyll and R Markdown. The main features of this function are:&lt;/p&gt;
@@ -251,7 +295,7 @@ knitr&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;kable&lt;span class=&quot;p&
 &lt;/table&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
         &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# a boring comment&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;})()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -273,8 +317,8 @@ plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quo
 
 &lt;p&gt;Zero-configuration is required for &lt;code&gt;servr::jekyll()&lt;/code&gt; to work on your Jekyll website. However, there is always demand for more control over some options, which can be defined in a custom build script. Here are the arguments of &lt;code&gt;servr::jekyll()&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;jekyll&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dir &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; input &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;_source&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;_posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; output &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&amp;quot;_posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;_posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; script &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Makefile&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;build.R&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; serve &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;jekyll&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dir &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; input &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;_source&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;_posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; output &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;s&quot;&gt;&amp;quot;_posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;_posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; script &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Makefile&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;build.R&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; serve &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
     command &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;jekyll build&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;By default, &lt;code&gt;jekyll()&lt;/code&gt; looks for &lt;code&gt;.Rmd&lt;/code&gt; files under the root directory, the &lt;code&gt;_source&lt;/code&gt; directory, and the &lt;code&gt;_posts&lt;/code&gt; directory of the Jekyll website. For example, if you put your R Markdown posts under &lt;code&gt;_source&lt;/code&gt;, they will be compiled to the &lt;code&gt;_posts&lt;/code&gt; directory&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
@@ -314,22 +358,22 @@ plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quo
         <pubDate>Sun, 28 Sep 2014 00:00:00 -0400</pubDate>
         <link>/2014/09/jekyll-with-knitr.html</link>
         <guid isPermaLink="true">/2014/09/jekyll-with-knitr.html</guid>
-
+        
         <category>knitr</category>
-
+        
         <category>servr</category>
-
+        
         <category>httpuv</category>
-
+        
         <category>websocket</category>
-
-
+        
+        
         <category>jekyll</category>
-
+        
         <category>rstats</category>
-
+        
       </item>
-
+    
       <item>
         <title>Welcome to Jekyll!</title>
         <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
@@ -350,13 +394,13 @@ plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quo
         <pubDate>Sat, 27 Sep 2014 19:16:53 -0400</pubDate>
         <link>/2014/09/welcome-to-jekyll.html</link>
         <guid isPermaLink="true">/2014/09/welcome-to-jekyll.html</guid>
-
-
+        
+        
         <category>jekyll</category>
-
+        
         <category>update</category>
-
+        
       </item>
-
+    
   </channel>
 </rss>

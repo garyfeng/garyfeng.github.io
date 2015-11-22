@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>My first Rmd blog post!</title>
+    <title>My second Rmd post</title>
     <meta name="description" content="Site Description Goes Here.
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="/2015/11/my-first-blog-post.html">
+    <link rel="canonical" href="/2015/11/my-second-rmd-post.html">
 </head>
 
 
@@ -57,27 +57,22 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">My first Rmd blog post!</h1>
+    <h1 class="post-title">My second Rmd post</h1>
     <p class="post-meta">Nov 21, 2015</p>
   </header>
 
   <article class="post-content">
-    <p>Following <a href="http://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/">this blog</a> it is straightforward to set up the jekyll site. The only problem I encountered is that <code>XCode</code> automatically jumps up to try to open the <code>.md</code> file. This was resolved by going into system preferences, file associations, and set the default app for <code>.md</code> to <code>RStudio</code> rather than <code>XCode</code>.</p>
+    <p>Well, I thought I disabled XCode from automatically popping up. It still does.</p>
 
-<p>Next questions:</p>
+<p>Secondly, this workflow automatically adds <code>/knitr-jekyll</code> before the URL for figures, resulting something like <code>/knitr-jekyllfigure/...</code>. This was done at the knitr from Rmd to md. It’s in the md. </p>
 
-<ul>
-  <li>
-    <p>[ ] how do I push this to my github site?</p>
-  </li>
-  <li>
-    <p>[ ] can I point my own URL to the github.io page?</p>
-  </li>
-</ul>
+<p>Then I did some test, and changed the <code>baseurl: ""</code> to <code>baseurl: "/"</code> in <code>_config.yml</code>, the URL is fixed. But doing so would ruin the rest of the pages – the “about” page becomes <code>http://about/</code>.</p>
+
+<p>Now I am going back, and just have to manually do this. </p>
 
 <div class="highlight"><pre><code class="language-r" data-lang="r">plot<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span></code></pre></div>
 
-<p><img src="/figure/source/my-first-blog-post/2015-11-21-my-first-blog-post/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1" /> </p>
+<p><img src="figure/source/my-second-rmd-post/2015-11-21-my-second-rmd-post/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1" /> </p>
 
   </article>
 
