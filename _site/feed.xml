@@ -4,10 +4,10 @@
     <title>garyfeng.github.io</title>
     <description>Site Description Goes Here.
 </description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 21 Nov 2015 23:47:01 -0500</pubDate>
-    <lastBuildDate>Sat, 21 Nov 2015 23:47:01 -0500</lastBuildDate>
+    <link>http://garyfeng.github.io/</link>
+    <atom:link href="http://garyfeng.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 22 Nov 2015 00:21:46 -0500</pubDate>
+    <lastBuildDate>Sun, 22 Nov 2015 00:21:46 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -18,9 +18,9 @@
 
 &lt;p&gt;&lt;img src=&quot;figure/source/my-third-rmd-post/2015-11-21-my-third-rmd-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
 </description>
-        <pubDate>Sat, 21 Nov 2015 18:42:53 -0500</pubDate>
-        <link>/2015/11/my-third-rmd-post.html</link>
-        <guid isPermaLink="true">/2015/11/my-third-rmd-post.html</guid>
+        <pubDate>Sat, 21 Nov 2015 19:21:45 -0500</pubDate>
+        <link>http://garyfeng.github.io/2015/11/my-third-rmd-post.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2015/11/my-third-rmd-post.html</guid>
         
         <category>example1</category>
         
@@ -44,8 +44,8 @@
 &lt;p&gt;&lt;img src=&quot;figure/source/my-second-rmd-post/2015-11-21-my-second-rmd-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
 </description>
         <pubDate>Sat, 21 Nov 2015 18:38:54 -0500</pubDate>
-        <link>/2015/11/my-second-rmd-post.html</link>
-        <guid isPermaLink="true">/2015/11/my-second-rmd-post.html</guid>
+        <link>http://garyfeng.github.io/2015/11/my-second-rmd-post.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2015/11/my-second-rmd-post.html</guid>
         
         <category>example1</category>
         
@@ -74,8 +74,8 @@
 &lt;p&gt;&lt;img src=&quot;/figure/source/my-first-blog-post/2015-11-21-my-first-blog-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
 </description>
         <pubDate>Sat, 21 Nov 2015 10:16:24 -0500</pubDate>
-        <link>/2015/11/my-first-blog-post.html</link>
-        <guid isPermaLink="true">/2015/11/my-first-blog-post.html</guid>
+        <link>http://garyfeng.github.io/2015/11/my-first-blog-post.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2015/11/my-first-blog-post.html</guid>
         
         <category>example1</category>
         
@@ -138,8 +138,8 @@ would make it impossible to sync given that my blog is inside the repo&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Sat, 21 Nov 2015 10:07:04 -0500</pubDate>
-        <link>/2015/11/setting-up.html</link>
-        <guid isPermaLink="true">/2015/11/setting-up.html</guid>
+        <link>http://garyfeng.github.io/2015/11/setting-up.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2015/11/setting-up.html</guid>
         
         <category>example1</category>
         
@@ -356,8 +356,8 @@ plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quo
 &lt;/div&gt;
 </description>
         <pubDate>Sun, 28 Sep 2014 00:00:00 -0400</pubDate>
-        <link>/2014/09/jekyll-with-knitr.html</link>
-        <guid isPermaLink="true">/2014/09/jekyll-with-knitr.html</guid>
+        <link>http://garyfeng.github.io/2014/09/jekyll-with-knitr.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2014/09/jekyll-with-knitr.html</guid>
         
         <category>knitr</category>
         
@@ -392,8 +392,8 @@ plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quo
 
 </description>
         <pubDate>Sat, 27 Sep 2014 19:16:53 -0400</pubDate>
-        <link>/2014/09/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">/2014/09/welcome-to-jekyll.html</guid>
+        <link>http://garyfeng.github.io/2014/09/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2014/09/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  My Third Rmd Post
-date: 2015-11-21 23:42:53
+date: 2015-11-22 00:21:45
 published: true
 tags: [example1, example2]
 ---
