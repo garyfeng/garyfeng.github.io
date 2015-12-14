@@ -6,13 +6,13 @@
 </description>
     <link>http://garyfeng.github.io/</link>
     <atom:link href="http://garyfeng.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 22 Nov 2015 00:27:15 -0500</pubDate>
-    <lastBuildDate>Sun, 22 Nov 2015 00:27:15 -0500</lastBuildDate>
+    <pubDate>Mon, 14 Dec 2015 12:20:39 -0500</pubDate>
+    <lastBuildDate>Mon, 14 Dec 2015 12:20:39 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
         <title>My first Rmd blog post!</title>
-        <description>&lt;p&gt;Following &lt;a href=&quot;http://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/&quot;&gt;this blog&lt;/a&gt; it is straightforward to set up the jekyll site. The only problem I encountered is that &lt;code&gt;XCode&lt;/code&gt; automatically jumps up to try to open the &lt;code&gt;.md&lt;/code&gt; file. This was resolved by going into system preferences, file associations, and set the default app for &lt;code&gt;.md&lt;/code&gt; to &lt;code&gt;RStudio&lt;/code&gt; rather than &lt;code&gt;XCode&lt;/code&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;Following &lt;a href=&quot;http://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/&quot;&gt;this blog&lt;/a&gt; it is straightforward to set up the jekyll site. The only problem I encountered is that &lt;code&gt;XCode&lt;/code&gt; automatically jumps up to try to open the &lt;code&gt;.md&lt;/code&gt; file. This was resolved by going into &lt;code&gt;system preferences &amp;gt; default apps&lt;/code&gt;, and set the default app for &lt;code&gt;.md, .r, .Rmd&lt;/code&gt; to &lt;code&gt;RStudio&lt;/code&gt; rather than &lt;code&gt;XCode&lt;/code&gt;. &lt;/p&gt;
 
 &lt;p&gt;Next questions:&lt;/p&gt;
 
@@ -27,11 +27,11 @@
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;/figure/source/my-first-blog-post/2015-11-21-my-first-blog-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;figure/source/my-first-blog-post/2015-11-21-my-first-blog-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
 </description>
-        <pubDate>Sat, 21 Nov 2015 19:26:28 -0500</pubDate>
-        <link>http://garyfeng.github.io/2015/11/my-first-blog-post.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2015/11/my-first-blog-post.html</guid>
+        <pubDate>Mon, 14 Dec 2015 07:20:36 -0500</pubDate>
+        <link>http://garyfeng.github.io/2015/12/my-first-blog-post.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2015/12/my-first-blog-post.html</guid>
         
         <category>example1</category>
         
