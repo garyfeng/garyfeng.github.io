@@ -1,0 +1,14 @@
+---
+layout: post
+title:  PlanOut!
+date: `r Sys.time()`
+published: true
+tags: [Assessment]
+---
+
+Going back to some older research from Facebook, namely [PlanOut](http://facebook.github.io/planout/).
+
+- The 2014 paper is [Designing and Deploying Online Field Experiments](http://arxiv.org/pdf/1409.3174v1.pdf)
+- The langauge is accessible at [here](http://facebook.github.io/planout/docs/about-planout.html)
+- and [github](https://github.com/facebook/planout)
+- the [editor](http://planout-editor.herokuapp.com/)

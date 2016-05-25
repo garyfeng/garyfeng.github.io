@@ -6,9 +6,48 @@
 </description>
     <link>http://garyfeng.github.io/</link>
     <atom:link href="http://garyfeng.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 25 May 2016 17:13:01 -0400</pubDate>
-    <lastBuildDate>Wed, 25 May 2016 17:13:01 -0400</lastBuildDate>
+    <pubDate>Wed, 25 May 2016 17:35:10 -0400</pubDate>
+    <lastBuildDate>Wed, 25 May 2016 17:35:10 -0400</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>PlanOut!</title>
+        <description>&lt;p&gt;Going back to some older research from Facebook, namely &lt;a href=&quot;http://facebook.github.io/planout/&quot;&gt;PlanOut&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The 2014 paper is &lt;a href=&quot;http://arxiv.org/pdf/1409.3174v1.pdf&quot;&gt;Designing and Deploying Online Field Experiments&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The langauge is accessible at &lt;a href=&quot;http://facebook.github.io/planout/docs/about-planout.html&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;and &lt;a href=&quot;https://github.com/facebook/planout&quot;&gt;github&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;the &lt;a href=&quot;http://planout-editor.herokuapp.com/&quot;&gt;editor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 25 May 2016 13:35:10 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/05/planout.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/05/planout.html</guid>
+        
+        <category>Assessment</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>new post</title>
+        <description>&lt;p&gt;Your markdown here!&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;figure/source/new-post/2016-05-25-new-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 May 2016 13:31:03 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/05/new-post.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/05/new-post.html</guid>
+        
+        <category>example1</category>
+        
+        <category>example2</category>
+        
+        
+      </item>
     
       <item>
         <title>It&#39;s 2016 now, I need to blog</title>
@@ -88,22 +127,6 @@ mv notebook.md ../_drafts # or ../_posts, if we&#39;re feeling lucky
         <category>R</category>
         
         <category>iPython</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>new post</title>
-        <description>&lt;p&gt;Your markdown here!&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 25 May 2016 12:42:23 -0400</pubDate>
-        <link>http://garyfeng.github.io/2016/05/new-post.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2016/05/new-post.html</guid>
-        
-        <category>example1</category>
-        
-        <category>example2</category>
         
         
       </item>
