@@ -6,13 +6,111 @@
 </description>
     <link>http://garyfeng.github.io/</link>
     <atom:link href="http://garyfeng.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 14 Dec 2015 12:20:39 -0500</pubDate>
-    <lastBuildDate>Mon, 14 Dec 2015 12:20:39 -0500</lastBuildDate>
-    <generator>Jekyll v2.4.0</generator>
+    <pubDate>Wed, 25 May 2016 17:13:01 -0400</pubDate>
+    <lastBuildDate>Wed, 25 May 2016 17:13:01 -0400</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>It&#39;s 2016 now, I need to blog</title>
+        <description>&lt;p&gt;I seriously need to restart my blog. Not only do I need a RMarkdown process, but also for Jupyter Notebooks. &lt;/p&gt;
+
+&lt;h1 id=&quot;updating-the-rmarkdownjekyll-process&quot;&gt;Updating the RMarkdown+jekyll process&lt;/h1&gt;
+
+&lt;p&gt;A lot of things broke. It turns out I needed to update R to v3.3.0 in order to use the latest version of &lt;code class=&quot;highlighter-rouge&quot;&gt;knitr&lt;/code&gt;, etc. So I went back to &lt;a href=&quot;https://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll&quot;&gt;brocks&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update R to v3.3.0, downloading from https://cran.r-project.org/bin/macosx/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In R,&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;install.packages(c(&quot;knitr&quot;, &quot;servr&quot;, &quot;devtools&quot;))     # To process .Rmd files
+devtools::install_github(&quot;hadley/lubridate&quot;)         # brocks reqs dev version
+devtools::install_github(&quot;brendan-r/brocks&quot;)         # My lazy wrapper funs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In terminal, do &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo gem install jekyll&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Then everything works again. &lt;/p&gt;
+
+&lt;h1 id=&quot;jekyll--jupyter-notebook&quot;&gt;Jekyll + Jupyter Notebook?&lt;/h1&gt;
+
+&lt;p&gt;Starting to look at some of the tutorials. &lt;a href=&quot;http://mcwitt.github.io/2015/04/29/jekyll_blogging_with_ipython3&quot;&gt;This&lt;/a&gt; seems promising. Source can be found at &lt;a href=&quot;https://gist.github.com/mcwitt/eaec84a6b50ad5ac9fb2&quot;&gt;gist&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;create-jekyll-post-template&quot;&gt;Create jekyll-post template&lt;/h2&gt;
+
+&lt;p&gt;Extend the markdown template: see &lt;a href=&quot;https://gist.github.com/mcwitt/eaec84a6b50ad5ac9fb2#file-jekyll-post-tpl&quot;&gt;gist&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyll-postpy&quot;&gt;jekyll-post.py&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;urllib.parse&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;quote&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# Py 3&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;ImportError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;urllib2&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;quote&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# Py 2&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NbConvertApp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;export_format&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;markdown&#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MarkdownExporter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;template_file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;jekyll-post&#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exporter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_extension&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;.md&#39;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;path2url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;Turn a file path into a URL&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;parts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;/notebooks/&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;/&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;part&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;part&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MarkdownExporter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;path2url&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path2url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## Traceback (most recent call last):
+##   File &quot;&amp;lt;string&amp;gt;&quot;, line 8, in &amp;lt;module&amp;gt;
+## NameError: name &#39;get_config&#39; is not defined&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;posting&quot;&gt;Posting&lt;/h2&gt;
+
+&lt;p&gt;In terminal:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ipython nbconvert --config jekyll-post notebook.ipynb
+mv notebook.md ../_drafts # or ../_posts, if we&#39;re feeling lucky
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 25 May 2016 13:12:11 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/05/it-s-2016-now.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/05/it-s-2016-now.html</guid>
+        
+        <category>R</category>
+        
+        <category>iPython</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>new post</title>
+        <description>&lt;p&gt;Your markdown here!&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 25 May 2016 12:42:23 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/05/new-post.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/05/new-post.html</guid>
+        
+        <category>example1</category>
+        
+        <category>example2</category>
+        
+        
+      </item>
     
       <item>
         <title>My first Rmd blog post!</title>
-        <description>&lt;p&gt;Following &lt;a href=&quot;http://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/&quot;&gt;this blog&lt;/a&gt; it is straightforward to set up the jekyll site. The only problem I encountered is that &lt;code&gt;XCode&lt;/code&gt; automatically jumps up to try to open the &lt;code&gt;.md&lt;/code&gt; file. This was resolved by going into &lt;code&gt;system preferences &amp;gt; default apps&lt;/code&gt;, and set the default app for &lt;code&gt;.md, .r, .Rmd&lt;/code&gt; to &lt;code&gt;RStudio&lt;/code&gt; rather than &lt;code&gt;XCode&lt;/code&gt;. &lt;/p&gt;
+        <description>&lt;p&gt;Following &lt;a href=&quot;http://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/&quot;&gt;this blog&lt;/a&gt; it is straightforward to set up the jekyll site. The only problem I encountered is that &lt;code class=&quot;highlighter-rouge&quot;&gt;XCode&lt;/code&gt; automatically jumps up to try to open the &lt;code class=&quot;highlighter-rouge&quot;&gt;.md&lt;/code&gt; file. This was resolved by going into &lt;code class=&quot;highlighter-rouge&quot;&gt;system preferences &amp;gt; default apps&lt;/code&gt;, and set the default app for &lt;code class=&quot;highlighter-rouge&quot;&gt;.md, .r, .Rmd&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;RStudio&lt;/code&gt; rather than &lt;code class=&quot;highlighter-rouge&quot;&gt;XCode&lt;/code&gt;. &lt;/p&gt;
 
 &lt;p&gt;Next questions:&lt;/p&gt;
 
@@ -25,7 +123,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&quot;figure/source/my-first-blog-post/2015-11-21-my-first-blog-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
 </description>
@@ -44,7 +142,7 @@
         <title>My Third Rmd Post</title>
         <description>&lt;p&gt;Your markdown here!&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&quot;/figure/source/my-third-rmd-post/2015-11-21-my-third-rmd-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
 </description>
@@ -63,13 +161,13 @@
         <title>My second Rmd post</title>
         <description>&lt;p&gt;Well, I thought I disabled XCode from automatically popping up. It still does.&lt;/p&gt;
 
-&lt;p&gt;Secondly, this workflow automatically adds &lt;code&gt;/knitr-jekyll&lt;/code&gt; before the URL for figures, resulting something like &lt;code&gt;/knitr-jekyllfigure/...&lt;/code&gt;. This was done at the knitr from Rmd to md. It’s in the md.&lt;/p&gt;
+&lt;p&gt;Secondly, this workflow automatically adds &lt;code class=&quot;highlighter-rouge&quot;&gt;/knitr-jekyll&lt;/code&gt; before the URL for figures, resulting something like &lt;code class=&quot;highlighter-rouge&quot;&gt;/knitr-jekyllfigure/...&lt;/code&gt;. This was done at the knitr from Rmd to md. It’s in the md.&lt;/p&gt;
 
-&lt;p&gt;Then I did some test, and changed the &lt;code&gt;baseurl: &quot;&quot;&lt;/code&gt; to &lt;code&gt;baseurl: &quot;/&quot;&lt;/code&gt; in &lt;code&gt;_config.yml&lt;/code&gt;, the URL is fixed. But doing so would ruin the rest of the pages – the “about” page becomes &lt;code&gt;http://about/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Then I did some test, and changed the &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl: &quot;&quot;&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl: &quot;/&quot;&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;, the URL is fixed. But doing so would ruin the rest of the pages – the “about” page becomes &lt;code class=&quot;highlighter-rouge&quot;&gt;http://about/&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Now I am going back, and just have to manually do this.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&quot;/figure/source/my-second-rmd-post/2015-11-21-my-second-rmd-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
 </description>
@@ -97,43 +195,43 @@ have a static site, I would like to blog with jekyll.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Checked to make sure Ruby is up to date &lt;code&gt;ruby --version&lt;/code&gt; &amp;gt;2.0&lt;/p&gt;
+    &lt;p&gt;Checked to make sure Ruby is up to date &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby --version&lt;/code&gt; &amp;gt;2.0&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Install bundler &lt;code&gt;sudo gem install bundler&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;Install bundler &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo gem install bundler&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Go to my github page repo &lt;code&gt;garyfeng.github.io&lt;/code&gt;, created a file &lt;code&gt;Gemfile&lt;/code&gt; with
+    &lt;p&gt;Go to my github page repo &lt;code class=&quot;highlighter-rouge&quot;&gt;garyfeng.github.io&lt;/code&gt;, created a file &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; with
 the following content&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code&gt;
-source &#39;https://rubygems.org&#39;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;source &#39;https://rubygems.org&#39;
 gem &#39;github-pages&#39;
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;CD into the repo, did &lt;code&gt;bundle install&lt;/code&gt;. This took 5 minutes to install everything&lt;/p&gt;
+    &lt;p&gt;CD into the repo, did &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;. This took 5 minutes to install everything&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;jekyll new blog&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new blog&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;code&gt;
-Gary-MBA:garyfeng.github.io garyfeng$ jekyll new blog
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Gary-MBA:garyfeng.github.io garyfeng$ jekyll new blog
 New jekyll site installed in /Users/garyfeng/github/local/garyfeng.github.io/blog.
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;then &lt;code&gt;cd blog &lt;/code&gt;. Did not do &lt;code&gt;git init&lt;/code&gt; as github instruction said, because that
+    &lt;p&gt;then &lt;code class=&quot;highlighter-rouge&quot;&gt;cd blog &lt;/code&gt;. Did not do &lt;code class=&quot;highlighter-rouge&quot;&gt;git init&lt;/code&gt; as github instruction said, because that
 would make it impossible to sync given that my blog is inside the repo&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;serve: &lt;code&gt;kekyll serve  --watch&lt;/code&gt;, and go to http://localhost:4000/&lt;/p&gt;
+    &lt;p&gt;serve: &lt;code class=&quot;highlighter-rouge&quot;&gt;kekyll serve  --watch&lt;/code&gt;, and go to http://localhost:4000/&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -150,14 +248,14 @@ would make it impossible to sync given that my blog is inside the repo&lt;/p&gt;
     
       <item>
         <title>Serve Jekyll Websites with servr and knitr</title>
-        <description>&lt;p&gt;The R package &lt;a href=&quot;https://github.com/yihui/servr&quot;&gt;&lt;strong&gt;servr&lt;/strong&gt;&lt;/a&gt; can be used to set up an HTTP server to serve files under a directory. Since &lt;strong&gt;servr&lt;/strong&gt; v0.2, it has added a function &lt;code&gt;servr::jekyll()&lt;/code&gt; specifically designed for websites based on Jekyll and R Markdown. The main features of this function are:&lt;/p&gt;
+        <description>&lt;p&gt;The R package &lt;a href=&quot;https://github.com/yihui/servr&quot;&gt;&lt;strong&gt;servr&lt;/strong&gt;&lt;/a&gt; can be used to set up an HTTP server to serve files under a directory. Since &lt;strong&gt;servr&lt;/strong&gt; v0.2, it has added a function &lt;code class=&quot;highlighter-rouge&quot;&gt;servr::jekyll()&lt;/code&gt; specifically designed for websites based on Jekyll and R Markdown. The main features of this function are:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;R Markdown source files are re-compiled through &lt;a href=&quot;http://yihui.name/knitr&quot;&gt;&lt;strong&gt;knitr&lt;/strong&gt;&lt;/a&gt; when their corresponding Markdown output files become older&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; than source files;&lt;/li&gt;
   &lt;li&gt;The web page will refresh itself automatically in the above case as well;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;As a result, all you need to do is write your blog posts (R Markdown documents), and you do not need to worry about re-building the website or calling &lt;strong&gt;knitr&lt;/strong&gt; commands. Whenever you save a blog post in your text editor, the web page will be updated on the fly. This is particularly handy in the &lt;a href=&quot;http://www.rstudio.com&quot;&gt;RStudio IDE&lt;/a&gt;, because after you run &lt;code&gt;servr::jekyll()&lt;/code&gt; in the console, you can start writing or editing your R Markdown posts, and the HTML output, displayed in the RStudio viewer pane, will be in sync with your source post in the source panel (see the screenshot below).&lt;/p&gt;
+&lt;p&gt;As a result, all you need to do is write your blog posts (R Markdown documents), and you do not need to worry about re-building the website or calling &lt;strong&gt;knitr&lt;/strong&gt; commands. Whenever you save a blog post in your text editor, the web page will be updated on the fly. This is particularly handy in the &lt;a href=&quot;http://www.rstudio.com&quot;&gt;RStudio IDE&lt;/a&gt;, because after you run &lt;code class=&quot;highlighter-rouge&quot;&gt;servr::jekyll()&lt;/code&gt; in the console, you can start writing or editing your R Markdown posts, and the HTML output, displayed in the RStudio viewer pane, will be in sync with your source post in the source panel (see the screenshot below).&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://i.imgur.com/gKVGhiP.png&quot;&gt;&lt;img src=&quot;http://i.imgur.com/gKVGhiP.png&quot; alt=&quot;Jekyll with servr and knitr&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -165,29 +263,29 @@ would make it impossible to sync given that my blog is inside the repo&lt;/p&gt;
 
 &lt;p&gt;You must have installed the packages &lt;strong&gt;servr&lt;/strong&gt; (&amp;gt;= 0.2) and &lt;strong&gt;knitr&lt;/strong&gt; (&amp;gt;= 1.8).&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;install.packages&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;servr&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;knitr&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; repos &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;http://cran.rstudio.com&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;install.packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;servr&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;knitr&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;repos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;http://cran.rstudio.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Of course, you have to install &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; as well. For Windows users, you have to make sure &lt;code&gt;jekyll&lt;/code&gt; can be found from your environment variable &lt;code&gt;PATH&lt;/code&gt;, i.e., R can call it via &lt;code&gt;system(&#39;jekyll&#39;)&lt;/code&gt;. This is normally not an issue for Linux or Mac OS X users (&lt;code&gt;gem install jekyll&lt;/code&gt; is enough).&lt;/p&gt;
+&lt;p&gt;Of course, you have to install &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; as well. For Windows users, you have to make sure &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; can be found from your environment variable &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt;, i.e., R can call it via &lt;code class=&quot;highlighter-rouge&quot;&gt;system(&#39;jekyll&#39;)&lt;/code&gt;. This is normally not an issue for Linux or Mac OS X users (&lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll&lt;/code&gt; is enough).&lt;/p&gt;
 
 &lt;h2 id=&quot;r-code-chunks&quot;&gt;R code chunks&lt;/h2&gt;
 
 &lt;p&gt;Now we write some R code chunks in this post. For example,&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;digits &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kp&quot;&gt;cat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;hello world!&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digits&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello world!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## hello world!&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## hello world!&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;set.seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; rnorm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;set.seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rnorm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##  [1]  9.44  9.77 11.56 10.07 10.13 11.72 10.46  8.73  9.31  9.55 11.22
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##  [1]  9.44  9.77 11.56 10.07 10.13 11.72 10.46  8.73  9.31  9.55 11.22
 ## [12] 10.36 10.40 10.11  9.44 11.79 10.50  8.03 10.70  9.53  8.93  9.78
 ## [23]  8.97  9.27  9.37  8.31 10.84 10.15  8.86 11.25 10.43  9.70 10.90
-## [34] 10.88 10.82 10.69 10.55  9.94  9.69  9.62&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+## [34] 10.88 10.82 10.69 10.55  9.94  9.69  9.62&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# generate a table&lt;/span&gt;
-knitr&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;kable&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mtcars&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# generate a table
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;knitr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mtcars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -294,63 +392,64 @@ knitr&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;kable&lt;span class=&quot;p&
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-        &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# a boring comment&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+        &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# a boring comment
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kp&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;formals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;servr&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;jekyll&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# arguments of the jekyll() function&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;formals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;servr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arguments&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] &amp;quot;dir&amp;quot;     &amp;quot;input&amp;quot;   &amp;quot;output&amp;quot;  &amp;quot;script&amp;quot;  &amp;quot;serve&amp;quot;   &amp;quot;command&amp;quot;
-## [7] &amp;quot;...&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] &quot;dir&quot;     &quot;input&quot;   &quot;output&quot;  &quot;script&quot;  &quot;serve&quot;   &quot;command&quot;
+## [7] &quot;...&quot;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Just to test inline R expressions&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; in &lt;strong&gt;knitr&lt;/strong&gt;, we know the first element in &lt;code&gt;x&lt;/code&gt; (created in the code chunk above) is 9.44. You can certainly draw some graphs as well:&lt;/p&gt;
+&lt;p&gt;Just to test inline R expressions&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; in &lt;strong&gt;knitr&lt;/strong&gt;, we know the first element in &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; (created in the code chunk above) is 9.44. You can certainly draw some graphs as well:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;par&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;mar &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; pch &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; col &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;red&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# a scatterplot&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;par&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;red&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scatterplot&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://db.yihui.name/jekyll/2014-09-28-jekyll-with-knitr/cars-1.png&quot; alt=&quot;A scatterplot of the cars data&quot; /&gt; &lt;/p&gt;
 
 &lt;h2 id=&quot;the-build-script&quot;&gt;The build script&lt;/h2&gt;
 
-&lt;p&gt;Zero-configuration is required for &lt;code&gt;servr::jekyll()&lt;/code&gt; to work on your Jekyll website. However, there is always demand for more control over some options, which can be defined in a custom build script. Here are the arguments of &lt;code&gt;servr::jekyll()&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Zero-configuration is required for &lt;code class=&quot;highlighter-rouge&quot;&gt;servr::jekyll()&lt;/code&gt; to work on your Jekyll website. However, there is always demand for more control over some options, which can be defined in a custom build script. Here are the arguments of &lt;code class=&quot;highlighter-rouge&quot;&gt;servr::jekyll()&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;jekyll&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;dir &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; input &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;_source&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;_posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; output &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-    &lt;span class=&quot;s&quot;&gt;&amp;quot;_posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;_posts&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; script &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Makefile&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;build.R&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; serve &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-    command &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;jekyll build&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;_source&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;_posts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;s2&quot;&gt;&quot;_posts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;_posts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Makefile&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;build.R&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serve&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll build&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;By default, &lt;code&gt;jekyll()&lt;/code&gt; looks for &lt;code&gt;.Rmd&lt;/code&gt; files under the root directory, the &lt;code&gt;_source&lt;/code&gt; directory, and the &lt;code&gt;_posts&lt;/code&gt; directory of the Jekyll website. For example, if you put your R Markdown posts under &lt;code&gt;_source&lt;/code&gt;, they will be compiled to the &lt;code&gt;_posts&lt;/code&gt; directory&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;By default, &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll()&lt;/code&gt; looks for &lt;code class=&quot;highlighter-rouge&quot;&gt;.Rmd&lt;/code&gt; files under the root directory, the &lt;code class=&quot;highlighter-rouge&quot;&gt;_source&lt;/code&gt; directory, and the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory of the Jekyll website. For example, if you put your R Markdown posts under &lt;code class=&quot;highlighter-rouge&quot;&gt;_source&lt;/code&gt;, they will be compiled to the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code&gt;script&lt;/code&gt; argument specifies a Makefile or an R script to be used to compile your R Markdown files. If it is a Makefile, &lt;code&gt;jekyll()&lt;/code&gt; will run &lt;code&gt;make -q&lt;/code&gt; to see if the site needs to be recompiled, then &lt;code&gt;make&lt;/code&gt; if it does. If the script is an R script, say, named &lt;code&gt;build.R&lt;/code&gt;, it is called via command line of the form&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;script&lt;/code&gt; argument specifies a Makefile or an R script to be used to compile your R Markdown files. If it is a Makefile, &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll()&lt;/code&gt; will run &lt;code class=&quot;highlighter-rouge&quot;&gt;make -q&lt;/code&gt; to see if the site needs to be recompiled, then &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt; if it does. If the script is an R script, say, named &lt;code class=&quot;highlighter-rouge&quot;&gt;build.R&lt;/code&gt;, it is called via command line of the form&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Rscript build.R arg1 arg2
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Rscript build.R arg1 arg2
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;See &lt;code&gt;?servr::jekyll&lt;/code&gt; for more details. You can define all your &lt;strong&gt;knitr&lt;/strong&gt; options and any other options in this R script. See the script &lt;a href=&quot;https://github.com/yihui/knitr-jekyll/blob/gh-pages/build.R&quot;&gt;build.R&lt;/a&gt; in the knitr-jekyll repository for an example: it will automatically set up the output renderers for &lt;strong&gt;knitr&lt;/strong&gt;, e.g., when the Jekyll Markdown engine is &lt;code&gt;kramdown&lt;/code&gt;, this script will call &lt;code&gt;knitr::render_jekyll()&lt;/code&gt; so that the code chunk output will be put inside the Liquid tag &lt;code&gt;{% highlight lang %} {% endhighlight %}&lt;/code&gt;; it also sets up some &lt;strong&gt;knitr&lt;/strong&gt; chunk and package options so that figures can be displayed correctly. For those who do not wish to store images in GIT (because normally they are binary files), you may check out how I host my images in Dropbox for this repository (see the code below &lt;code&gt;Sys.getenv(&#39;USER&#39;) == &#39;yihui&#39;&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;See &lt;code class=&quot;highlighter-rouge&quot;&gt;?servr::jekyll&lt;/code&gt; for more details. You can define all your &lt;strong&gt;knitr&lt;/strong&gt; options and any other options in this R script. See the script &lt;a href=&quot;https://github.com/yihui/knitr-jekyll/blob/gh-pages/build.R&quot;&gt;build.R&lt;/a&gt; in the knitr-jekyll repository for an example: it will automatically set up the output renderers for &lt;strong&gt;knitr&lt;/strong&gt;, e.g., when the Jekyll Markdown engine is &lt;code class=&quot;highlighter-rouge&quot;&gt;kramdown&lt;/code&gt;, this script will call &lt;code class=&quot;highlighter-rouge&quot;&gt;knitr::render_jekyll()&lt;/code&gt; so that the code chunk output will be put inside the Liquid tag &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;highlight&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endhighlight&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;; it also sets up some &lt;strong&gt;knitr&lt;/strong&gt; chunk and package options so that figures can be displayed correctly. For those who do not wish to store images in GIT (because normally they are binary files), you may check out how I host my images in Dropbox for this repository (see the code below &lt;code class=&quot;highlighter-rouge&quot;&gt;Sys.getenv(&#39;USER&#39;) == &#39;yihui&#39;&lt;/code&gt;).&lt;/p&gt;
 
 &lt;h2 id=&quot;on-the-markdown-renderers&quot;&gt;On the Markdown renderers&lt;/h2&gt;
 
-&lt;p&gt;Jekyll supports a number of Markdown renderers, such as kramdown, redcarpet, rdiscount, and so on. At the moment, it is a little annoying that kramdown supports LaTeX math expressions via &lt;code&gt;$$ math $$&lt;/code&gt;&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, but does not support syntax highlighting of code blocks using the three backticks syntax (you must write the awkward Liquid tags); on the other hand, redcarpet does not support LaTeX math but does support three backticks. In my opinion, all the different flavors and implementations of Markdown is the biggest problem of Markdown, since there is not an unambiguous spec for Markdown. &lt;a href=&quot;http://commonmark.org&quot;&gt;CommonMark&lt;/a&gt; looks like a promising project to set up a common spec for Markdown, and &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;Pandoc&lt;/a&gt; is a great implementation that has brought almost all the features that you may ever need in Markdown. You may find some Pandoc plugins for Jekyll by searching online. However, GitHub Pages does not support arbitrary Jekyll plugins, so you cannot just use a Pandoc plugin there, but that does not mean you cannot use Pandoc locally, nor does it mean you cannot push locally compiled HTML pages to GitHub Pages&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Jekyll supports a number of Markdown renderers, such as kramdown, redcarpet, rdiscount, and so on. At the moment, it is a little annoying that kramdown supports LaTeX math expressions via &lt;code class=&quot;highlighter-rouge&quot;&gt;$$ math $$&lt;/code&gt;&lt;sup id=&quot;fnref:4&quot;&gt;&lt;a href=&quot;#fn:4&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, but does not support syntax highlighting of code blocks using the three backticks syntax (you must write the awkward Liquid tags); on the other hand, redcarpet does not support LaTeX math but does support three backticks. In my opinion, all the different flavors and implementations of Markdown is the biggest problem of Markdown, since there is not an unambiguous spec for Markdown. &lt;a href=&quot;http://commonmark.org&quot;&gt;CommonMark&lt;/a&gt; looks like a promising project to set up a common spec for Markdown, and &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;Pandoc&lt;/a&gt; is a great implementation that has brought almost all the features that you may ever need in Markdown. You may find some Pandoc plugins for Jekyll by searching online. However, GitHub Pages does not support arbitrary Jekyll plugins, so you cannot just use a Pandoc plugin there, but that does not mean you cannot use Pandoc locally, nor does it mean you cannot push locally compiled HTML pages to GitHub Pages&lt;sup id=&quot;fnref:5&quot;&gt;&lt;a href=&quot;#fn:5&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;I’d love you to &lt;a href=&quot;https://github.com/yihui/knitr-jekyll&quot;&gt;fork&lt;/a&gt; this repository, make some (hopefully minor) changes, and &lt;a href=&quot;https://github.com/yihui/knitr-jekyll/issues&quot;&gt;let me know&lt;/a&gt; your success of using Pandoc with Jekyll. Happy hacking, and good luck!&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;Determined by the modification time of files, i.e., &lt;code&gt;file.info(x)[, &#39;mtime&#39;]&lt;/code&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Determined by the modification time of files, i.e., &lt;code class=&quot;highlighter-rouge&quot;&gt;file.info(x)[, &#39;mtime&#39;]&lt;/code&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;The syntax in R Markdown for inline expressions is &lt;code&gt;`r code`&lt;/code&gt;, where &lt;code&gt;code&lt;/code&gt; is the R expression that you want to evaluate, e.g. &lt;code&gt;x[1]&lt;/code&gt;. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;The syntax in R Markdown for inline expressions is &lt;code class=&quot;highlighter-rouge&quot;&gt;`r code`&lt;/code&gt;, where &lt;code class=&quot;highlighter-rouge&quot;&gt;code&lt;/code&gt; is the R expression that you want to evaluate, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;x[1]&lt;/code&gt;. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:3&quot;&gt;
-      &lt;p&gt;The reason that we may need to write R Markdown posts in &lt;code&gt;_source&lt;/code&gt; instead of &lt;code&gt;_posts&lt;/code&gt; is that Jekyll has &lt;a href=&quot;https://github.com/jekyll/jekyll/pull/3147&quot;&gt;a subtle bug&lt;/a&gt; (fixed in v2.5.3): its variable &lt;code&gt;site.posts&lt;/code&gt; will count &lt;code&gt;.Rmd&lt;/code&gt; files under &lt;code&gt;_posts&lt;/code&gt; as well. The consequence is, if you list all the posts of your website, the post &lt;code&gt;_posts/yyyy-mm-dd-foo.md&lt;/code&gt; will show up twice due to the existence of &lt;code&gt;_posts/yyyy-mm-dd-foo.Rmd&lt;/code&gt;, therefore I would recommend you to put your R Markdown posts in a separate directory, such as &lt;code&gt;_source&lt;/code&gt;. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;The reason that we may need to write R Markdown posts in &lt;code class=&quot;highlighter-rouge&quot;&gt;_source&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; is that Jekyll has &lt;a href=&quot;https://github.com/jekyll/jekyll/pull/3147&quot;&gt;a subtle bug&lt;/a&gt; (fixed in v2.5.3): its variable &lt;code class=&quot;highlighter-rouge&quot;&gt;site.posts&lt;/code&gt; will count &lt;code class=&quot;highlighter-rouge&quot;&gt;.Rmd&lt;/code&gt; files under &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; as well. The consequence is, if you list all the posts of your website, the post &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts/yyyy-mm-dd-foo.md&lt;/code&gt; will show up twice due to the existence of &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts/yyyy-mm-dd-foo.Rmd&lt;/code&gt;, therefore I would recommend you to put your R Markdown posts in a separate directory, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;_source&lt;/code&gt;. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:4&quot;&gt;
-      &lt;p&gt;Unfortunately, kramdown does not support math expressions in single dollars, e.g. &lt;code&gt;$ \alpha $&lt;/code&gt;. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Unfortunately, kramdown does not support math expressions in single dollars, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;$ \alpha $&lt;/code&gt;. &lt;a href=&quot;#fnref:4&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:5&quot;&gt;
-      &lt;p&gt;If you choose to generate your Jekyll website locally, and push the HTML files to GitHub, you will need the file &lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages&quot;&gt;&lt;code&gt;.nojekyll&lt;/code&gt;&lt;/a&gt; in the root directory of your website. &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;If you choose to generate your Jekyll website locally, and push the HTML files to GitHub, you will need the file &lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.nojekyll&lt;/code&gt;&lt;/a&gt; in the root directory of your website. &lt;a href=&quot;#fnref:5&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -376,17 +475,17 @@ plot&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;cars&lt;span class=&quot;p&quo
     
       <item>
         <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
 &lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
 

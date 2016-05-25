@@ -73,43 +73,43 @@ have a static site, I would like to blog with jekyll.</p>
 
 <ul>
   <li>
-    <p>Checked to make sure Ruby is up to date <code>ruby --version</code> &gt;2.0</p>
+    <p>Checked to make sure Ruby is up to date <code class="highlighter-rouge">ruby --version</code> &gt;2.0</p>
   </li>
   <li>
-    <p>Install bundler <code>sudo gem install bundler</code></p>
+    <p>Install bundler <code class="highlighter-rouge">sudo gem install bundler</code></p>
   </li>
   <li>
-    <p>Go to my github page repo <code>garyfeng.github.io</code>, created a file <code>Gemfile</code> with
+    <p>Go to my github page repo <code class="highlighter-rouge">garyfeng.github.io</code>, created a file <code class="highlighter-rouge">Gemfile</code> with
 the following content</p>
   </li>
 </ul>
 
-<p><code>
-source 'https://rubygems.org'
+<div class="highlighter-rouge"><pre class="highlight"><code>source 'https://rubygems.org'
 gem 'github-pages'
-</code></p>
+</code></pre>
+</div>
 
 <ul>
   <li>
-    <p>CD into the repo, did <code>bundle install</code>. This took 5 minutes to install everything</p>
+    <p>CD into the repo, did <code class="highlighter-rouge">bundle install</code>. This took 5 minutes to install everything</p>
   </li>
   <li>
-    <p><code>jekyll new blog</code></p>
+    <p><code class="highlighter-rouge">jekyll new blog</code></p>
   </li>
 </ul>
 
-<p><code>
-Gary-MBA:garyfeng.github.io garyfeng$ jekyll new blog
+<div class="highlighter-rouge"><pre class="highlight"><code>Gary-MBA:garyfeng.github.io garyfeng$ jekyll new blog
 New jekyll site installed in /Users/garyfeng/github/local/garyfeng.github.io/blog.
-</code></p>
+</code></pre>
+</div>
 
 <ul>
   <li>
-    <p>then <code>cd blog </code>. Did not do <code>git init</code> as github instruction said, because that
+    <p>then <code class="highlighter-rouge">cd blog </code>. Did not do <code class="highlighter-rouge">git init</code> as github instruction said, because that
 would make it impossible to sync given that my blog is inside the repo</p>
   </li>
   <li>
-    <p>serve: <code>kekyll serve  --watch</code>, and go to http://localhost:4000/</p>
+    <p>serve: <code class="highlighter-rouge">kekyll serve  --watch</code>, and go to http://localhost:4000/</p>
   </li>
 </ul>
 

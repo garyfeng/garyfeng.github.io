@@ -1,0 +1,70 @@
+---
+layout: post
+title:  It's 2016 now, I need to blog
+date: `r Sys.time()`
+published: true
+tags: [R, iPython]
+---
+
+I seriously need to restart my blog. Not only do I need a RMarkdown process, but also for Jupyter Notebooks. 
+
+# Updating the RMarkdown+jekyll process
+
+A lot of things broke. It turns out I needed to update R to v3.3.0 in order to use the latest version of `knitr`, etc. So I went back to [brocks](https://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll)
+
+- Update R to v3.3.0, downloading from https://cran.r-project.org/bin/macosx/
+
+- In R,
+
+```
+install.packages(c("knitr", "servr", "devtools"))     # To process .Rmd files
+devtools::install_github("hadley/lubridate")         # brocks reqs dev version
+devtools::install_github("brendan-r/brocks")         # My lazy wrapper funs
+```
+
+- In terminal, do `sudo gem install jekyll`
+
+
+Then everything works again. 
+
+# Jekyll + Jupyter Notebook?
+
+Starting to look at some of the tutorials. [This]( http://mcwitt.github.io/2015/04/29/jekyll_blogging_with_ipython3) seems promising. Source can be found at [gist](https://gist.github.com/mcwitt/eaec84a6b50ad5ac9fb2)
+
+## Create jekyll-post template
+
+Extend the markdown template: see [gist](https://gist.github.com/mcwitt/eaec84a6b50ad5ac9fb2#file-jekyll-post-tpl)
+
+
+## jekyll-post.py
+
+```{python}
+try:
+    from urllib.parse import quote  # Py 3
+except ImportError:
+    from urllib2 import quote  # Py 2
+import os
+import sys
+
+c = get_config()
+c.NbConvertApp.export_format = 'markdown'
+c.MarkdownExporter.template_file = 'jekyll-post'
+c.Exporter.file_extension = '.md'
+
+def path2url(path):
+    """Turn a file path into a URL"""
+    parts = path.split(os.path.sep)
+    return '{{ site.baseurl }}/notebooks/' + '/'.join(quote(part) for part in parts)
+
+c.MarkdownExporter.filters = {'path2url': path2url}
+
+```
+
+## Posting
+
+In terminal:
+
+```
+ipython nbconvert --config jekyll-post notebook.ipynb
+mv notebook.md ../_drafts # or ../_posts, if we're feeling lucky
+```
