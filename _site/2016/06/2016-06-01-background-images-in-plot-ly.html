@@ -1,0 +1,8 @@
+<p>We have developed an open-source eye-tracking library <a href="https://github.com/EducationalTestingService/Confero">Confero</a>. Now it’s time to finish the <a href="https://github.com/EducationalTestingService/Confero">ConferoAnalytics</a>. </p>
+
+<p>R or Python? Well, we are constrainted by the fact that Confero saves data in HDF5 files. The only R library I can find on CRAN is <a href="https://cran.r-project.org/web/packages/h5/">H5</a>, which <a href="https://www.google.com/search?q=error%3A+%27h5c%2B%2B%27+does+not+seem+to+be+installed+on+your+platform.&amp;oq=error%3A+%27h5c%2B%2B%27+does+not+seem+to+be+installed+on+your+platform.&amp;aqs=chrome..69i57j69i58.229j0j7&amp;sourceid=chrome&amp;ie=UTF-8">does not compile on my mac</a>, whereas I know Python/Pandas supports HDF5. So that’s that, at least for now.</p>
+
+<p>Next up, what visualization framework to use? Florian and I have developed some R functions that work well … well enough fro publications, but not interactive. It’s also a hack to get ggplot to work with background images, etc. </p>
+
+<p>I have been moving toward <a href="">plot.ly</a> since a few months ago when it became open-source. According to <a href="http://slides.com/jackparmer/deck-7/fullscreen">this blog post</a> you can do overlays, but it is not supported as a native feature and it takes a lot of tweaking to get the iframe alight right … come on, Plot.ly. </p>
+
