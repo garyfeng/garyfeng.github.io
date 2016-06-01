@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  ConferoAnalytics: Background Images in Plot.ly
-date: 2016-06-01 11:49:06
+title:  ConferoAnalytics, Background Images in Plot.ly
+date: 2016-06-01 15:11:32
 published: true
 tags: [viz, python, javascript]
 ---

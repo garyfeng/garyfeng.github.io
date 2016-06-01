@@ -2,7 +2,7 @@
 title: garyfeng.github.io
 email: gary.feng@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Site Description Goes Here.
+  A blog for Gary.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://garyfeng.github.io" # the base hostname & protocol for your site
 twitter_username: garyfeng2

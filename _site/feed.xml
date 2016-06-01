@@ -2,16 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>garyfeng.github.io</title>
-    <description>Site Description Goes Here.
+    <description>A blog for Gary.
 </description>
     <link>http://garyfeng.github.io/</link>
     <atom:link href="http://garyfeng.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 01 Jun 2016 11:49:07 -0400</pubDate>
-    <lastBuildDate>Wed, 01 Jun 2016 11:49:07 -0400</lastBuildDate>
+    <pubDate>Wed, 01 Jun 2016 15:11:53 -0400</pubDate>
+    <lastBuildDate>Wed, 01 Jun 2016 15:11:53 -0400</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title></title>
+        <title>coming soon</title>
+        <description>&lt;p&gt;According to &lt;a href=&quot;http://community.plot.ly/t/set-image-as-background-python/864&quot;&gt;this&lt;/a&gt; from April, 2016, “Background images are coming to Plotly in the next few months.”&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Jun 2016 11:11:53 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/06/background-images-in-plot-ly-coming-soon.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/background-images-in-plot-ly-coming-soon.html</guid>
+        
+        <category>viz</category>
+        
+        <category>python</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>ConferoAnalytics, Background Images in Plot.ly</title>
         <description>&lt;p&gt;We have developed an open-source eye-tracking library &lt;a href=&quot;https://github.com/EducationalTestingService/Confero&quot;&gt;Confero&lt;/a&gt;. Now it’s time to finish the &lt;a href=&quot;https://github.com/EducationalTestingService/Confero&quot;&gt;ConferoAnalytics&lt;/a&gt;. &lt;/p&gt;
 
 &lt;p&gt;R or Python? Well, we are constrainted by the fact that Confero saves data in HDF5 files. The only R library I can find on CRAN is &lt;a href=&quot;https://cran.r-project.org/web/packages/h5/&quot;&gt;H5&lt;/a&gt;, which &lt;a href=&quot;https://www.google.com/search?q=error%3A+%27h5c%2B%2B%27+does+not+seem+to+be+installed+on+your+platform.&amp;amp;oq=error%3A+%27h5c%2B%2B%27+does+not+seem+to+be+installed+on+your+platform.&amp;amp;aqs=chrome..69i57j69i58.229j0j7&amp;amp;sourceid=chrome&amp;amp;ie=UTF-8&quot;&gt;does not compile on my mac&lt;/a&gt;, whereas I know Python/Pandas supports HDF5. So that’s that, at least for now.&lt;/p&gt;
@@ -21,9 +36,15 @@
 &lt;p&gt;I have been moving toward &lt;a href=&quot;&quot;&gt;plot.ly&lt;/a&gt; since a few months ago when it became open-source. According to &lt;a href=&quot;http://slides.com/jackparmer/deck-7/fullscreen&quot;&gt;this blog post&lt;/a&gt; you can do overlays, but it is not supported as a native feature and it takes a lot of tweaking to get the iframe alight right … come on, Plot.ly. &lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 01 Jun 2016 11:49:07 -0400</pubDate>
-        <link>http://garyfeng.github.io/2016/06/2016-06-01-background-images-in-plot-ly.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/2016-06-01-background-images-in-plot-ly.html</guid>
+        <pubDate>Wed, 01 Jun 2016 11:11:32 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/06/background-images-in-plot-ly.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/background-images-in-plot-ly.html</guid>
+        
+        <category>viz</category>
+        
+        <category>python</category>
+        
+        <category>javascript</category>
         
         
       </item>
@@ -256,70 +277,6 @@ mv notebook.md ../_drafts # or ../_posts, if we&#39;re feeling lucky
         <pubDate>Sat, 21 Nov 2015 18:38:54 -0500</pubDate>
         <link>http://garyfeng.github.io/2015/11/my-second-rmd-post.html</link>
         <guid isPermaLink="true">http://garyfeng.github.io/2015/11/my-second-rmd-post.html</guid>
-        
-        <category>example1</category>
-        
-        <category>example2</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Setting up the github jekyll workflow</title>
-        <description>&lt;p&gt;&lt;strong&gt;Note that this is obsolete. I am following the RMarkdown workflow now.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;blogging-on-github&quot;&gt;Blogging on github?&lt;/h1&gt;
-
-&lt;p&gt;I’ve turned on the github pages for my github account. Now that I
-have a static site, I would like to blog with jekyll.&lt;/p&gt;
-
-&lt;p&gt;Following the official guide here https://help.github.com/articles/using-jekyll-with-pages/&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Checked to make sure Ruby is up to date &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby --version&lt;/code&gt; &amp;gt;2.0&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Install bundler &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo gem install bundler&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Go to my github page repo &lt;code class=&quot;highlighter-rouge&quot;&gt;garyfeng.github.io&lt;/code&gt;, created a file &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; with
-the following content&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;source &#39;https://rubygems.org&#39;
-gem &#39;github-pages&#39;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;CD into the repo, did &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;. This took 5 minutes to install everything&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new blog&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Gary-MBA:garyfeng.github.io garyfeng$ jekyll new blog
-New jekyll site installed in /Users/garyfeng/github/local/garyfeng.github.io/blog.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;then &lt;code class=&quot;highlighter-rouge&quot;&gt;cd blog &lt;/code&gt;. Did not do &lt;code class=&quot;highlighter-rouge&quot;&gt;git init&lt;/code&gt; as github instruction said, because that
-would make it impossible to sync given that my blog is inside the repo&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;serve: &lt;code class=&quot;highlighter-rouge&quot;&gt;kekyll serve  --watch&lt;/code&gt;, and go to http://localhost:4000/&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 21 Nov 2015 10:07:04 -0500</pubDate>
-        <link>http://garyfeng.github.io/2015/11/setting-up.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2015/11/setting-up.html</guid>
         
         <category>example1</category>
         

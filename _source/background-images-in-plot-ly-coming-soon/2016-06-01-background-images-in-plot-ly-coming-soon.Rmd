@@ -1,0 +1,9 @@
+---
+layout: post
+title:  coming soon
+date: `r Sys.time()`
+published: true
+tags: [viz, python]
+---
+
+According to [this](http://community.plot.ly/t/set-image-as-background-python/864) from April, 2016, "Background images are coming to Plotly in the next few months."

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  ConferoAnalytics: Background Images in Plot.ly
+title:  ConferoAnalytics, Background Images in Plot.ly
 date: `r Sys.time()`
 published: true
 tags: [viz, python, javascript]
