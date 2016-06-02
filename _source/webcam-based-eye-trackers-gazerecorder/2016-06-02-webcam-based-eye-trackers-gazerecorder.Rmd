@@ -1,0 +1,9 @@
+---
+layout: post
+title:  Webcam-based eye-trackers, gazeRecorder
+date: `r Sys.time()`
+published: true
+tags: [eye-tracking]
+---
+
+Forgot to mention [gazeRecorder](https://sourceforge.net/projects/gazerecorder/) and the [facebook](https://www.facebook.com/gazerecorder/), there is the 2013 paper(?) comparing it with Tobii ... not open source. 

@@ -1,0 +1,20 @@
+---
+layout: post
+title:  plot.ly transparent image background, my hacks
+date: 2016-06-02 09:47:32
+published: true
+tags: [viz]
+---
+
+Plot.ly does not yet support transparent image overlays in their output, see [this](http://garyfeng.github.io/2016/06/background-images-in-plot-ly.html) and [that](http://garyfeng.github.io/2016/06/background-images-in-plot-ly-coming-soon.html)
+
+
+My hack starts with the SVG output:
+
+Adding a transparent background image to Plot.ly's SVG output. Two changes: (a) set opacity in `<g class="subplot xy" style = "opacity:0.5">`, and (b) adding an image in the `layer-below >> imagelayer` group.
+
+See the [public gist](https://gist.github.com/garyfeng/9516714839c84a1982dda74dd5f14a6c)
+
+Implementation thoughts:
+
+Add the following to plotly's [plot_api.js function](https://github.com/plotly/plotly.js/blob/3b5178c0441ad046118f0688026bb9486df80d9e/src/plot_api/plot_api.js), somewhere around line `2756`. Add the option for the transparent background image, an opacity parameter, and make sure to adjust the size to fit. 
