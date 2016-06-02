@@ -6,9 +6,34 @@
 </description>
     <link>http://garyfeng.github.io/</link>
     <atom:link href="http://garyfeng.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 01 Jun 2016 15:11:53 -0400</pubDate>
-    <lastBuildDate>Wed, 01 Jun 2016 15:11:53 -0400</lastBuildDate>
+    <pubDate>Thu, 02 Jun 2016 08:48:14 -0400</pubDate>
+    <lastBuildDate>Thu, 02 Jun 2016 08:48:14 -0400</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Webcam-based eye-trackers to watch</title>
+        <description>&lt;p&gt;Several new papers on webcam-based eye-tracking:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.researchgate.net/publication/299490836_Building_a_Personalized_Auto-Calibrating_Eye_Tracker_from_User_Interactions&quot;&gt;PACE&lt;/a&gt;, CHI16, a desktop application that uses mouse movements to recalibrate gaze estimation, based on assumptions about where mouse movements and gaze are most likely to align.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://arxiv.org/abs/1504.06755&quot;&gt;TurkerGaze&lt;/a&gt;, including &lt;a href=&quot;http://turkergaze.cs.princeton.edu/supp.pdf&quot;&gt;supplemental materials&lt;/a&gt; that includes some results on the mean-shift methods for fixation detection. &lt;a href=&quot;https://github.com/PrincetonVision/TurkerGaze&quot;&gt;Github repo&lt;/a&gt;. Aiming to estimate visual saliency. &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jeffhuang.com/Final_WebGazer_IJCAI16.pdf&quot;&gt;WebGazer&lt;/a&gt;, IJCAI16, from &lt;a href=&quot;http://jeffhuang.com/&quot;&gt;Jeff Huang&lt;/a&gt;’s group at Brown, with online demo at &lt;a href=&quot;http://webgazer.cs.brown.edu/&quot;&gt;http://webgazer.cs.brown.edu/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Essentially the same architecture here – face tracking ==&amp;gt; getting the eyes ==&amp;gt; eye feature extraction ==&amp;gt; use ridge regression or other methods to calibrate&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Jun 2016 04:48:13 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/06/webcam-based-eye-trackers-to-watch.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/webcam-based-eye-trackers-to-watch.html</guid>
+        
+        <category>eye-tracking</category>
+        
+        <category>multimodal</category>
+        
+        
+      </item>
     
       <item>
         <title>coming soon</title>
@@ -252,31 +277,6 @@ mv notebook.md ../_drafts # or ../_posts, if we&#39;re feeling lucky
         <pubDate>Sat, 21 Nov 2015 19:21:45 -0500</pubDate>
         <link>http://garyfeng.github.io/2015/11/my-third-rmd-post.html</link>
         <guid isPermaLink="true">http://garyfeng.github.io/2015/11/my-third-rmd-post.html</guid>
-        
-        <category>example1</category>
-        
-        <category>example2</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>My second Rmd post</title>
-        <description>&lt;p&gt;Well, I thought I disabled XCode from automatically popping up. It still does.&lt;/p&gt;
-
-&lt;p&gt;Secondly, this workflow automatically adds &lt;code class=&quot;highlighter-rouge&quot;&gt;/knitr-jekyll&lt;/code&gt; before the URL for figures, resulting something like &lt;code class=&quot;highlighter-rouge&quot;&gt;/knitr-jekyllfigure/...&lt;/code&gt;. This was done at the knitr from Rmd to md. It’s in the md.&lt;/p&gt;
-
-&lt;p&gt;Then I did some test, and changed the &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl: &quot;&quot;&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl: &quot;/&quot;&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;, the URL is fixed. But doing so would ruin the rest of the pages – the “about” page becomes &lt;code class=&quot;highlighter-rouge&quot;&gt;http://about/&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now I am going back, and just have to manually do this.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;img src=&quot;/figure/source/my-second-rmd-post/2015-11-21-my-second-rmd-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt; &lt;/p&gt;
-</description>
-        <pubDate>Sat, 21 Nov 2015 18:38:54 -0500</pubDate>
-        <link>http://garyfeng.github.io/2015/11/my-second-rmd-post.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2015/11/my-second-rmd-post.html</guid>
         
         <category>example1</category>
         
