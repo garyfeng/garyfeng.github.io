@@ -1,0 +1,15 @@
+---
+layout: post
+title:  Hacking plotly ... getting ready
+date: 2016-06-03 14:33:58
+published: true
+tags: [viz, github]
+---
+
+Getting ready to implement the image overlay in [plot.ly](http://garyfeng.github.io/2016/06/plot-ly-transparent-image-background-my-hacks.html). 
+
+- Forked the main [plotly.js](https://github.com/plotly/plotly.js)
+- Forked the [plotly.py](https://github.com/plotly/plotly.py)
+- Forked the [R interface](https://github.com/ropensci/plotly)
+
+Target is to implement the transparent image in plot_api.js, see example [gist](https://gist.github.com/garyfeng/9516714839c84a1982dda74dd5f14a6c). We will report back how it works. 
