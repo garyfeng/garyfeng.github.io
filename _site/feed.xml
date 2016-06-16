@@ -6,9 +6,35 @@
 </description>
     <link>http://garyfeng.github.io/</link>
     <atom:link href="http://garyfeng.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 03 Jun 2016 14:33:59 -0400</pubDate>
-    <lastBuildDate>Fri, 03 Jun 2016 14:33:59 -0400</lastBuildDate>
+    <pubDate>Thu, 16 Jun 2016 15:32:34 -0400</pubDate>
+    <lastBuildDate>Thu, 16 Jun 2016 15:32:34 -0400</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Literate programming, or litpro</title>
+        <description>&lt;p&gt;I used to use &lt;a href=&quot;https://github.com/jostylr/literate-programming&quot;&gt;literate-programming&lt;/a&gt; but the author has moved to &lt;a href=&quot;https://github.com/jostylr/litpro&quot;&gt;litpro&lt;/a&gt;. Need to update my workflow. &lt;/p&gt;
+</description>
+        <pubDate>Thu, 16 Jun 2016 11:32:34 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/06/literate-programming-or-litpro.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/literate-programming-or-litpro.html</guid>
+        
+        <category>programming</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>RSA ... animated storytelling</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=cqw70hT_ANU&amp;amp;feature=youtu.be&quot;&gt;RSA’s animated storytelling&lt;/a&gt; is impressive, but if it’s all manual drawing, it’s hard to replicate. At least not for me. &lt;/p&gt;
+</description>
+        <pubDate>Mon, 06 Jun 2016 11:53:51 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/06/rsa-animated-storytelling.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/rsa-animated-storytelling.html</guid>
+        
+        <category>viz</category>
+        
+        
+      </item>
     
       <item>
         <title>Hacking plotly ... getting ready</title>
@@ -170,45 +196,6 @@
         <category>Processing</category>
         
         <category>viz</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>PlanOut!</title>
-        <description>&lt;p&gt;Going back to some older research from Facebook, namely &lt;a href=&quot;http://facebook.github.io/planout/&quot;&gt;PlanOut&lt;/a&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The 2014 paper is &lt;a href=&quot;http://arxiv.org/pdf/1409.3174v1.pdf&quot;&gt;Designing and Deploying Online Field Experiments&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The langauge is accessible at &lt;a href=&quot;http://facebook.github.io/planout/docs/about-planout.html&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;and &lt;a href=&quot;https://github.com/facebook/planout&quot;&gt;github&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;the &lt;a href=&quot;http://planout-editor.herokuapp.com/&quot;&gt;editor&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 25 May 2016 13:35:10 -0400</pubDate>
-        <link>http://garyfeng.github.io/2016/05/planout.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2016/05/planout.html</guid>
-        
-        <category>Assessment</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>new post</title>
-        <description>&lt;p&gt;Your markdown here!&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;img src=&quot;figure/source/new-post/2016-05-25-new-post/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 25 May 2016 13:31:03 -0400</pubDate>
-        <link>http://garyfeng.github.io/2016/05/new-post.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2016/05/new-post.html</guid>
-        
-        <category>example1</category>
-        
-        <category>example2</category>
         
         
       </item>
