@@ -80,7 +80,9 @@ kstr = '{\
             ""isCollapsed"":true\
         }\
     }'
+```
 
+```
 # we create 2 versions, one with the original "true" and the other replacing it with "True"
 s1 = kstr.replace("\"\"", "\"")
 print s1
