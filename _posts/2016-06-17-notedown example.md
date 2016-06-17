@@ -10,7 +10,7 @@ The following is an output, from within a Jupyter Notebook.
 
 It looks great on github, viewed as a markdown file. However, code blocks look terrible on the Jekyle blog site. The problems seem to have to do with the failure to process the ` ```{.python .input  n=53}` code. 
 
-Looking at Jekyl's [document](https://jekyllrb.com/docs/posts/#highlighting-code-snippets) page, I need a different syntax to mark the code blocks: `{% highlight ruby %}`
+Looking at Jekyl's [document](https://jekyllrb.com/docs/posts/#highlighting-code-snippets) page, I need a different syntax to mark the code blocks: `\{% highlight ruby %\}`
 
 
 ----
