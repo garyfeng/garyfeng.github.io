@@ -10,6 +10,8 @@ The following is an output, from within a Jupyter Notebook.
 
 It looks great on github, viewed as a markdown file. However, code blocks look terrible on the Jekyle blog site. The problems seem to have to do with the failure to process the ` ```{.python .input  n=53}` code. 
 
+Looking at Jekyl's [document](https://jekyllrb.com/docs/posts/#highlighting-code-snippets) page, I need a different syntax to mark the code blocks: `{% highlight ruby %}`
+
 
 ----
 
@@ -22,12 +24,12 @@ May, 2016
 <h1 id="tocheading">Table of Contents</h1>
 <div id="toc"></div>
 
-```
+```{% highlight javascript %}
 %%javascript
 $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')
 ```
 
-```
+```{% highlight json %}
 [
  {
   "data": {
@@ -62,7 +64,7 @@ double-quote in the JSON so we have to clear that first. We create 2 versions,
 one with the original "true" and the other replacing it with "True", because the
 JSON method requires `true` while the AST method requires `True`.
 
-```
+```{% highlight python %}
 {.python .input  n=2}
 kstr = '{\
     ""name"":""text.change"",\
@@ -88,7 +90,7 @@ print s2
 
 ```
 
-```
+```{% highlight json %}
 {.json .output n=2}
 [
  {
