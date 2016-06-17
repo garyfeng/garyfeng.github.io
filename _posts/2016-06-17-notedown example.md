@@ -8,6 +8,9 @@ tags: [programming]
 
 The following is an output, from within a Jupyter Notebook. 
 
+It looks great on github, viewed as a markdown file. However, code blocks look terrible on the Jekyle blog site. The problems seem to have to do with the failure to process the ` ```{.python .input  n=53}` code. 
+
+
 ----
 
 # Parsing JSON strings in Pandas
