@@ -65,7 +65,6 @@ one with the original "true" and the other replacing it with "True", because the
 JSON method requires `true` while the AST method requires `True`.
 
 ```{% highlight python %}
-{.python .input  n=2}
 kstr = '{\
     ""name"":""text.change"",\
     ""textDiff"":{\
