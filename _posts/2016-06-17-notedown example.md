@@ -23,13 +23,11 @@ May, 2016
 <div id="toc"></div>
 
 ```
-{.python .input  n=53}
 %%javascript
 $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')
 ```
 
 ```
-{.json .output n=53}
 [
  {
   "data": {
@@ -317,6 +315,7 @@ Compile this iPynb into markdown, using `notedown`.
 
 ```{.python .input  n=54}
 ! pip install notedown
+! notedown "Parsing JSON strings in Pandas.ipynb" --to markdown > "2016-06-17-notedown example.md"
 ```
 
 ```{.json .output n=54}
