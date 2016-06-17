@@ -27,6 +27,7 @@ May, 2016
 ```{% highlight javascript %}
 %%javascript
 $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')
+{% endhighlight %}
 ```
 
 ```{% highlight json %}
@@ -40,6 +41,7 @@ $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebo
   "output_type": "display_data"
  }
 ]
+{% endhighlight %}
 ```
 
 # Introduction
@@ -80,6 +82,7 @@ kstr = '{\
             ""isCollapsed"":true\
         }\
     }'
+{% endhighlight %}
 ```
 
 ```
