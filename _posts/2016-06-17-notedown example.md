@@ -24,13 +24,12 @@ May, 2016
 <h1 id="tocheading">Table of Contents</h1>
 <div id="toc"></div>
 
-```{% highlight javascript %}
+```
 %%javascript
 $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')
-{% endhighlight %}
 ```
 
-```{% highlight json %}
+```
 [
  {
   "data": {
@@ -41,7 +40,6 @@ $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebo
   "output_type": "display_data"
  }
 ]
-{% endhighlight %}
 ```
 
 # Introduction
@@ -66,7 +64,7 @@ double-quote in the JSON so we have to clear that first. We create 2 versions,
 one with the original "true" and the other replacing it with "True", because the
 JSON method requires `true` while the AST method requires `True`.
 
-```{% highlight python %}
+```
 kstr = '{\
     ""name"":""text.change"",\
     ""textDiff"":{\
@@ -82,10 +80,6 @@ kstr = '{\
             ""isCollapsed"":true\
         }\
     }'
-{% endhighlight %}
-```
-
-```
 # we create 2 versions, one with the original "true" and the other replacing it with "True"
 s1 = kstr.replace("\"\"", "\"")
 print s1
@@ -94,7 +88,7 @@ print s2
 
 ```
 
-```{% highlight json %}
+```
 {.json .output n=2}
 [
  {
