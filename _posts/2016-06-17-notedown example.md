@@ -22,12 +22,14 @@ May, 2016
 <h1 id="tocheading">Table of Contents</h1>
 <div id="toc"></div>
 
-```{.python .input  n=53}
+```
+{.python .input  n=53}
 %%javascript
 $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')
 ```
 
-```{.json .output n=53}
+```
+{.json .output n=53}
 [
  {
   "data": {
@@ -62,7 +64,8 @@ double-quote in the JSON so we have to clear that first. We create 2 versions,
 one with the original "true" and the other replacing it with "True", because the
 JSON method requires `true` while the AST method requires `True`.
 
-```{.python .input  n=2}
+```
+{.python .input  n=2}
 kstr = '{\
     ""name"":""text.change"",\
     ""textDiff"":{\
@@ -87,7 +90,8 @@ print s2
 
 ```
 
-```{.json .output n=2}
+```
+{.json .output n=2}
 [
  {
   "name": "stdout",
