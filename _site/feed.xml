@@ -6,25 +6,376 @@
 </description>
     <link>http://garyfeng.github.io/</link>
     <atom:link href="http://garyfeng.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 17 Jun 2016 14:08:36 -0400</pubDate>
-    <lastBuildDate>Fri, 17 Jun 2016 14:08:36 -0400</lastBuildDate>
+    <pubDate>Sun, 19 Jun 2016 00:16:41 -0400</pubDate>
+    <lastBuildDate>Sun, 19 Jun 2016 00:16:41 -0400</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>Literate programming, this time notedown</title>
-        <description>&lt;p&gt;Your markdown here!&lt;/p&gt;
+        <title>Jupyter Notebook unit testing</title>
+        <description>&lt;p&gt;Thinking how to develop a python library for PDiA but in Jupyter notebooks where I can actually document using literate programing. I’d like to keep the code and the unit test in the same notebook, so that i can test when I want, but also can run a unittest later.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;plot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;So far the solution I like the most is &lt;a href=&quot;https://github.com/JoaoFelipe/ipython-unittest&quot;&gt;https://github.com/JoaoFelipe/ipython-unittest&lt;/a&gt; which adds 3 ipython cell magics that make a lot of sense. &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;figure/source/literate-programming-this-time-notedown/2016-06-17-literate-programming-this-time-notedown/unnamed-chunk-1-1.png&quot; alt=&quot;plot of chunk unnamed-chunk-1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Other solutions at the top of google search dont seem to fit what I need. &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zonca.github.io/2014/09/unit-tests-ipython-notebook.html&quot;&gt;https://zonca.github.io/2014/09/unit-tests-ipython-notebook.html&lt;/a&gt; requires &lt;code class=&quot;highlighter-rouge&quot;&gt;test*.ipynb&lt;/code&gt; that are separate from the actual code.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://docs.python-guide.org/en/latest/writing/tests/&quot;&gt;http://docs.python-guide.org/en/latest/writing/tests/&lt;/a&gt; is a general intro to python unittesting&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Fri, 17 Jun 2016 10:08:33 -0400</pubDate>
+        <pubDate>Sat, 18 Jun 2016 20:16:40 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/06/jupyter-notebook-unit-testing.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/jupyter-notebook-unit-testing.html</guid>
+        
+        <category>python</category>
+        
+        <category>programming</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Literate programming, this time notedown</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://github.com/aaren/notedown&quot;&gt;Notedown&lt;/a&gt; converts Rmarkdown and iPythonNotebooks to markdown with code blocks. Which presumably can be used for blogging. &lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 18 Jun 2016 19:56:48 -0400</pubDate>
         <link>http://garyfeng.github.io/2016/06/literate-programming-this-time-notedown.html</link>
         <guid isPermaLink="true">http://garyfeng.github.io/2016/06/literate-programming-this-time-notedown.html</guid>
         
-        <category>example1</category>
+        <category>programming</category>
         
-        <category>example2</category>
+        <category>markdown</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Notedown Example</title>
+        <description>&lt;p&gt;The following is an output, from within a Jupyter Notebook. &lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;parsing-json-strings-in-pandas&quot;&gt;Parsing JSON strings in Pandas&lt;/h1&gt;
+
+&lt;p&gt;Gary Feng,
+Princeton, NJ
+May, 2016&lt;/p&gt;
+
+&lt;h1 id=&quot;tocheading&quot;&gt;Table of Contents&lt;/h1&gt;
+&lt;div id=&quot;toc&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=53&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%%javascript&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$.getScript(&#39;https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js&#39;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=53&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;application/javascript&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;$.getScript(&#39;https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js&#39;)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text/plain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;IPython.core.display.Javascript object&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;metadata&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;display_data&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;In the 2015/16 NAEP process data scheme there is a compromise in the data
+structure, where we needed to keep complex (hierarchical) information about the
+state of objects in a single SQL string field. To the extend we can, we used
+JSON to encode the data. The question is how to efficiently decode the data for
+analysis.&lt;/p&gt;
+
+&lt;h1 id=&quot;loading-json-to-dict&quot;&gt;Loading JSON to dict&lt;/h1&gt;
+
+&lt;p&gt;Here we compare two ways to convert the JSON string to a dict.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JSON: http://stackoverflow.com/questions/19483351/converting-json-string-to-
+dictionary-not-list-python&lt;/li&gt;
+  &lt;li&gt;AST: http://stackoverflow.com/questions/15197673/using-pythons-eval-vs-ast-
+literal-eval&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here is one example keystroke datum. The eNAEP system somehow doubled the
+double-quote in the JSON so we have to clear that first. We create 2 versions,
+one with the original “true” and the other replacing it with “True”, because the
+JSON method requires &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; while the AST method requires &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;```{.python .input  n=2}
+kstr = ‘{\
+    ““name””:”“text.change””,\
+    ““textDiff””:{\
+        ““diffs””:[{““edit””:”“INS””,”“pos”“:1,”“len”“:1,”“text””:”“m””}],\
+        ““textContext””:”“m^ “”,\
+        ““textLength”“:3},\
+        ““selection””:{\
+            ““selectedText””:””””,\
+            ““startPos”“:1,\
+            ““endPos”“:1,\
+            ““lenSelected”“:0,\
+            ““textSelected””:””””,\
+            ““isCollapsed”“:true\
+        }\
+    }’&lt;/p&gt;
+
+&lt;h1 id=&quot;we-create-2-versions-one-with-the-original-true-and-the-other-replacing-it-with-true&quot;&gt;we create 2 versions, one with the original “true” and the other replacing it with “True”&lt;/h1&gt;
+&lt;p&gt;s1 = kstr.replace(“&quot;&quot;”, “&quot;”)
+print s1
+s2 = kstr.replace(“&quot;&quot;”, “&quot;”).replace(“true”, “True”)
+print s2&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+```{.json .output n=2}
+[
+ {
+  &quot;name&quot;: &quot;stdout&quot;,
+  &quot;output_type&quot;: &quot;stream&quot;,
+  &quot;text&quot;: &quot;{    \&quot;name\&quot;:\&quot;text.change\&quot;,    \&quot;textDiff\&quot;:{        \&quot;diffs\&quot;:[{\&quot;edit\&quot;:\&quot;INS\&quot;,\&quot;pos\&quot;:1,\&quot;len\&quot;:1,\&quot;text\&quot;:\&quot;m\&quot;}],        \&quot;textContext\&quot;:\&quot;m^ \&quot;,        \&quot;textLength\&quot;:3},        \&quot;selection\&quot;:{            \&quot;selectedText\&quot;:\&quot;\&quot;,            \&quot;startPos\&quot;:1,            \&quot;endPos\&quot;:1,            \&quot;lenSelected\&quot;:0,            \&quot;textSelected\&quot;:\&quot;\&quot;,            \&quot;isCollapsed\&quot;:true        }    }\n{    \&quot;name\&quot;:\&quot;text.change\&quot;,    \&quot;textDiff\&quot;:{        \&quot;diffs\&quot;:[{\&quot;edit\&quot;:\&quot;INS\&quot;,\&quot;pos\&quot;:1,\&quot;len\&quot;:1,\&quot;text\&quot;:\&quot;m\&quot;}],        \&quot;textContext\&quot;:\&quot;m^ \&quot;,        \&quot;textLength\&quot;:3},        \&quot;selection\&quot;:{            \&quot;selectedText\&quot;:\&quot;\&quot;,            \&quot;startPos\&quot;:1,            \&quot;endPos\&quot;:1,            \&quot;lenSelected\&quot;:0,            \&quot;textSelected\&quot;:\&quot;\&quot;,            \&quot;isCollapsed\&quot;:True        }    }\n&quot;
+ }
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;json&quot;&gt;JSON&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;json.loads(s&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;textDiff&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;textContext&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text/plain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;u&#39;m^ &#39;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;execution_count&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;metadata&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;execute_result&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%timeit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;json.loads(s&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stdout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;100000 loops, best of 3: 11.8 \u00b5s per loop\n&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ast-literaleval&quot;&gt;AST .literal_eval()&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ast&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;a=ast.literal_eval(s&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;textDiff&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;textContext&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text/plain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&#39;m^ &#39;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;execution_count&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;metadata&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;execute_result&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%timeit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ast.literal_eval(s&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stdout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;10000 loops, best of 3: 60.8 \u00b5s per loop\n&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;AST is about &lt;strong&gt;6x&lt;/strong&gt; slower. JSON wins, and we don’t need to convert &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; to
+&lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Looking forward, here’s probably how we are going to use it in Pandas:&lt;/p&gt;
+
+&lt;p&gt;```{.python .input  n=9}
+import pandas as pd&lt;/p&gt;
+
+&lt;p&gt;ps = pd.Series([json.loads(s1), ast.literal_eval(s2)])
+print ps
+print “Accessing individual elements”
+print ps.loc[0][“textDiff”][“textContext”]
+print “\nGetting elements in as a Pandas Series”
+print ps.apply(lambda x: x[“textDiff”][“textContext”])
+```&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stdout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0    {u&#39;selection&#39;: {u&#39;isCollapsed&#39;: True, u&#39;lenSel...\n1    {u&#39;selection&#39;: {u&#39;isCollapsed&#39;: True, u&#39;lenSel...\ndtype: object\nAccessing individual elements\nm^ \n\nGetting elements in as a Pandas Series\n0    m^ \n1    m^ \ndtype: object\n&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This also suggests that I should parse all &lt;code class=&quot;highlighter-rouge&quot;&gt;ExtendedInfo&lt;/code&gt; entry into objects so
+that I can access later.&lt;/p&gt;
+
+&lt;h1 id=&quot;retrieving-info-from-a-dict&quot;&gt;Retrieving info from a dict&lt;/h1&gt;
+
+&lt;p&gt;Since we have nested data structure in JSON converted into a nested dict,
+accessing it becomes a bit more complex. Here we compare the speed different
+algorithms. It comes down to a trade off between &lt;strong&gt;speed&lt;/strong&gt; and the
+&lt;strong&gt;expressiveness&lt;/strong&gt; of the method of data access.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Native python: &lt;code class=&quot;highlighter-rouge&quot;&gt;a[&quot;textDiff&quot;][&quot;textContext&quot;]&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;A path-like expression using &lt;code class=&quot;highlighter-rouge&quot;&gt;dpath&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;dpath.util.get(j,
+&#39;textDiff/textContext&#39;)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;A XPath-like full-featured expression using &lt;code class=&quot;highlighter-rouge&quot;&gt;jsonpath_rw&lt;/code&gt;:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;parse(&#39;textDiff.textContext&#39;).find(j)[0].value&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;```{.python .input  n=47}
+# install libraries
+! pip install jsonpath-rw
+! pip install dpath
+from jsonpath_rw import jsonpath, parse
+# [match.value for match in parse(‘textDiff.diffs.[*].len’).find(j)]
+import dpath.util&lt;/p&gt;
+
+&lt;h1 id=&quot;for-jsonpathrw&quot;&gt;for jsonpath_rw&lt;/h1&gt;
+&lt;p&gt;def getVal(json, key):
+    # make sure this is JSON
+    # parse(‘textDiff.diffs.[*].len’).find(j)[0].value
+    try:
+        res = parse(key).find(json)[0].value
+    except:
+        res = None
+    return res&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+```{.json .output n=47}
+[
+ {
+  &quot;name&quot;: &quot;stdout&quot;,
+  &quot;output_type&quot;: &quot;stream&quot;,
+  &quot;text&quot;: &quot;Requirement already satisfied (use --upgrade to upgrade): jsonpath-rw in /Users/garyfeng/anaconda/lib/python2.7/site-packages\nRequirement already satisfied (use --upgrade to upgrade): ply in /Users/garyfeng/anaconda/lib/python2.7/site-packages (from jsonpath-rw)\nRequirement already satisfied (use --upgrade to upgrade): decorator in /Users/garyfeng/anaconda/lib/python2.7/site-packages (from jsonpath-rw)\nRequirement already satisfied (use --upgrade to upgrade): six in /Users/garyfeng/anaconda/lib/python2.7/site-packages/six-1.10.0-py2.7.egg (from jsonpath-rw)\nCleaning up...\nRequirement already satisfied (use --upgrade to upgrade): dpath in /Users/garyfeng/anaconda/lib/python2.7/site-packages\nCleaning up...\n&quot;
+ }
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;dict&quot;&gt;dict&lt;/h2&gt;
+
+&lt;p&gt;First, after json parsing &lt;code class=&quot;highlighter-rouge&quot;&gt;j&lt;/code&gt; is simple a dict. Let’s time the good-o python
+dict access. Result is typically in the 100 nano-seconds.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=48&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%timeit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;textDiff&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=48&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stdout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;The slowest run took 27.37 times longer than the fastest. This could mean that an intermediate result is being cached \n10000000 loops, best of 3: 113 ns per loop\n&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;dpath&quot;&gt;dpath&lt;/h2&gt;
+&lt;p&gt;Next, let’s use the &lt;code class=&quot;highlighter-rouge&quot;&gt;dpath&lt;/code&gt; library. Typically in the 100 micro-seconds, or
+&lt;strong&gt;1,000x slower&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=49&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%timeit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;dpath.util.get(j,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;textDiff&#39;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=49&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stdout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;The slowest run took 16.18 times longer than the fastest. This could mean that an intermediate result is being cached \n10000 loops, best of 3: 104 \u00b5s per loop\n&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;jsonpathrw&quot;&gt;jsonpath_rw&lt;/h2&gt;
+&lt;p&gt;Using the full-featured &lt;code class=&quot;highlighter-rouge&quot;&gt;jsonpath_rw&lt;/code&gt; is in the 6 ms range, or 60x slower than
+&lt;code class=&quot;highlighter-rouge&quot;&gt;dpath&lt;/code&gt;, or &lt;strong&gt;60,000x slower than &lt;code class=&quot;highlighter-rouge&quot;&gt;dict&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%timeit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;parse(&#39;textDiff.textContext&#39;).find(j)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.value&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stdout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;The slowest run took 8.60 times longer than the fastest. This could mean that an intermediate result is being cached \n100 loops, best of 3: 6.51 ms per loop\n&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion-1&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;dict&lt;/code&gt; method as much as we can for performance, unless we really need
+the flexibility of &lt;code class=&quot;highlighter-rouge&quot;&gt;dpath&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;jsonpath_rw&lt;/code&gt; is nice but probably not necessary.&lt;/p&gt;
+
+&lt;h1 id=&quot;try-notedown&quot;&gt;Try notedown&lt;/h1&gt;
+
+&lt;p&gt;Compile this iPynb into markdown, using &lt;code class=&quot;highlighter-rouge&quot;&gt;notedown&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=54&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;pip&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;notedown&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=54&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stdout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Downloading/unpacking notedown\n  Downloading notedown-1.5.0.tar.gz\n  Running setup.py (path:/private/var/folders/bg/4qvb4_0573v7j7j71bwk16dc0000gp/T/pip_build_garyfeng/notedown/setup.py) egg_info for package notedown\n    \nRequirement already satisfied (use --upgrade to upgrade): nbformat in /Users/garyfeng/anaconda/lib/python2.7/site-packages (from notedown)\nRequirement already satisfied (use --upgrade to upgrade): nbconvert in /Users/garyfeng/anaconda/lib/python2.7/site-packages (from notedown)\nRequirement already satisfied (use --upgrade to upgrade): ipython in /Users/garyfeng/anaconda/lib/python2.7/site-packages (from notedown)\nDownloading/unpacking pandoc-attributes (from notedown)\n  Downloading pandoc-attributes-0.1.7.tar.gz\n  Running setup.py (path:/private/var/folders/bg/4qvb4_0573v7j7j71bwk16dc0000gp/T/pip_build_garyfeng/pandoc-attributes/setup.py) egg_info for package pandoc-attributes\n    \nRequirement already satisfied (use --upgrade to upgrade): six in /Users/garyfeng/anaconda/lib/python2.7/site-packages/six-1.10.0-py2.7.egg (from notedown)\nDownloading/unpacking pandocfilters (from pandoc-attributes-&amp;gt;notedown)\n  Downloading pandocfilters-1.3.0.tar.gz\n  Running setup.py (path:/private/var/folders/bg/4qvb4_0573v7j7j71bwk16dc0000gp/T/pip_build_garyfeng/pandocfilters/setup.py) egg_info for package pandocfilters\n    \nInstalling collected packages: notedown, pandoc-attributes, pandocfilters\n  Running setup.py install for notedown\n    \n    Installing notedown script to /Users/garyfeng/anaconda/bin\n  Running setup.py install for pandoc-attributes\n    \n  Running setup.py install for pandocfilters\n    \nSuccessfully installed notedown pandoc-attributes pandocfilters\nCleaning up...\n&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 16 Jun 2016 11:32:34 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/06/notedown-example.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/notedown-example.html</guid>
+        
+        <category>programming</category>
         
         
       </item>
@@ -150,46 +501,6 @@
         <category>viz</category>
         
         <category>python</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>ConferoAnalytics, Background Images in Plot.ly</title>
-        <description>&lt;p&gt;We have developed an open-source eye-tracking library &lt;a href=&quot;https://github.com/EducationalTestingService/Confero&quot;&gt;Confero&lt;/a&gt;. Now it’s time to finish the &lt;a href=&quot;https://github.com/EducationalTestingService/Confero&quot;&gt;ConferoAnalytics&lt;/a&gt;. &lt;/p&gt;
-
-&lt;p&gt;R or Python? Well, we are constrainted by the fact that Confero saves data in HDF5 files. The only R library I can find on CRAN is &lt;a href=&quot;https://cran.r-project.org/web/packages/h5/&quot;&gt;H5&lt;/a&gt;, which &lt;a href=&quot;https://www.google.com/search?q=error%3A+%27h5c%2B%2B%27+does+not+seem+to+be+installed+on+your+platform.&amp;amp;oq=error%3A+%27h5c%2B%2B%27+does+not+seem+to+be+installed+on+your+platform.&amp;amp;aqs=chrome..69i57j69i58.229j0j7&amp;amp;sourceid=chrome&amp;amp;ie=UTF-8&quot;&gt;does not compile on my mac&lt;/a&gt;, whereas I know Python/Pandas supports HDF5. So that’s that, at least for now.&lt;/p&gt;
-
-&lt;p&gt;Next up, what visualization framework to use? Florian and I have developed some R functions that work well … well enough fro publications, but not interactive. It’s also a hack to get ggplot to work with background images, etc. &lt;/p&gt;
-
-&lt;p&gt;I have been moving toward &lt;a href=&quot;&quot;&gt;plot.ly&lt;/a&gt; since a few months ago when it became open-source. According to &lt;a href=&quot;http://slides.com/jackparmer/deck-7/fullscreen&quot;&gt;this blog post&lt;/a&gt; you can do overlays, but it is not supported as a native feature and it takes a lot of tweaking to get the iframe alight right … come on, Plot.ly. &lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 01 Jun 2016 11:11:32 -0400</pubDate>
-        <link>http://garyfeng.github.io/2016/06/background-images-in-plot-ly.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/background-images-in-plot-ly.html</guid>
-        
-        <category>viz</category>
-        
-        <category>python</category>
-        
-        <category>javascript</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Cynthia Brewer, brewing colors</title>
-        <description>&lt;p&gt;Ha, I have been using a &lt;a href=&quot;http://moderndata.plot.ly/color-scales-in-ipython-notebook/&quot;&gt;Python module&lt;/a&gt; inspired by Cynthia Brewer, the &lt;a href=&quot;https://github.com/jackparmer/colorlover&quot;&gt;colorlover&lt;/a&gt; module. I had to fix a couple of things with that module, though I can’t recall what exactly I did. &lt;/p&gt;
-
-&lt;p&gt;Here’s the URL to her &lt;a href=&quot;http://colorbrewer2.org/&quot;&gt;original site&lt;/a&gt;. Very cool and practical design. And the &lt;a href=&quot;http://www.personal.psu.edu/cab38/ColorBrewer/ColorBrewer_updates.html&quot;&gt;background&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 26 May 2016 08:44:47 -0400</pubDate>
-        <link>http://garyfeng.github.io/2016/05/cynthia-brewer-brewing-colors.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2016/05/cynthia-brewer-brewing-colors.html</guid>
-        
-        <category>viz</category>
         
         
       </item>

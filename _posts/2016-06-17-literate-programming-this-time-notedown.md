@@ -1,16 +1,10 @@
 ---
 layout: post
 title:  Literate programming, this time notedown
-date: 2016-06-17 14:08:33
+date: 2016-06-18 23:56:48
 published: true
-tags: [example1, example2]
+tags: [programming, markdown]
 ---
 
-Your markdown here!
+[Notedown](https://github.com/aaren/notedown) converts Rmarkdown and iPythonNotebooks to markdown with code blocks. Which presumably can be used for blogging. 
 
-
-{% highlight r %}
-plot(1:10)
-{% endhighlight %}
-
-![plot of chunk unnamed-chunk-1](figure/source/literate-programming-this-time-notedown/2016-06-17-literate-programming-this-time-notedown/unnamed-chunk-1-1.png)

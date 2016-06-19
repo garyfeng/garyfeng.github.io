@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Literate programming, this time notedown</title>
+    <title>Jupyter Notebook unit testing</title>
     <meta name="description" content="A blog for Gary.
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://garyfeng.github.io/2016/06/literate-programming-this-time-notedown.html">
+    <link rel="canonical" href="http://garyfeng.github.io/2016/06/jupyter-notebook-unit-testing.html">
 </head>
 
 
@@ -57,13 +57,25 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Literate programming, this time notedown</h1>
+    <h1 class="post-title">Jupyter Notebook unit testing</h1>
     <p class="post-meta">Jun 18, 2016</p>
   </header>
 
   <article class="post-content">
-    <p><a href="https://github.com/aaren/notedown">Notedown</a> converts Rmarkdown and iPythonNotebooks to markdown with code blocks. Which presumably can be used for blogging. </p>
+    <p>Thinking how to develop a python library for PDiA but in Jupyter notebooks where I can actually document using literate programing. I’d like to keep the code and the unit test in the same notebook, so that i can test when I want, but also can run a unittest later.</p>
 
+<p>So far the solution I like the most is <a href="https://github.com/JoaoFelipe/ipython-unittest">https://github.com/JoaoFelipe/ipython-unittest</a> which adds 3 ipython cell magics that make a lot of sense. </p>
+
+<p>Other solutions at the top of google search dont seem to fit what I need. </p>
+
+<ul>
+  <li>
+    <p><a href="https://zonca.github.io/2014/09/unit-tests-ipython-notebook.html">https://zonca.github.io/2014/09/unit-tests-ipython-notebook.html</a> requires <code class="highlighter-rouge">test*.ipynb</code> that are separate from the actual code.</p>
+  </li>
+  <li>
+    <p><a href="http://docs.python-guide.org/en/latest/writing/tests/">http://docs.python-guide.org/en/latest/writing/tests/</a> is a general intro to python unittesting</p>
+  </li>
+</ul>
 
   </article>
 

@@ -3,11 +3,8 @@ layout: post
 title:  Literate programming, this time notedown
 date: `r Sys.time()`
 published: true
-tags: [example1, example2]
+tags: [programming, markdown]
 ---
 
-Your markdown here!
+[Notedown](https://github.com/aaren/notedown) converts Rmarkdown and iPythonNotebooks to markdown with code blocks. Which presumably can be used for blogging. 
 
-```{r}
-plot(1:10)
-```
