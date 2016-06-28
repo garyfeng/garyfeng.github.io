@@ -1,0 +1,20 @@
+---
+layout: post
+title:  installing R kernal for iPython
+date: `r Sys.time()`
+published: true
+tags: [python, R]
+---
+
+Install the R kernal, see [here](https://irkernel.github.io/installation/).
+
+On OSX, make sure you open the R in termal, not in R Studio, which doesn’t honor `$PATH` changes in `~/.bash_profile`.
+
+```
+install.packages(c('repr', 'pbdZMQ', 'devtools')) # repr is already on CRAN
+devtools::install_github('IRkernel/IRdisplay')
+devtools::install_github('IRkernel/IRkernel')
+IRkernel::installspec()
+```
+
+Then restart or refresh the browser. It worked for me.

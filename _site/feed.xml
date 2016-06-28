@@ -6,9 +6,109 @@
 </description>
     <link>http://garyfeng.github.io/</link>
     <atom:link href="http://garyfeng.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 19 Jun 2016 00:16:41 -0400</pubDate>
-    <lastBuildDate>Sun, 19 Jun 2016 00:16:41 -0400</lastBuildDate>
+    <pubDate>Mon, 27 Jun 2016 23:47:16 -0400</pubDate>
+    <lastBuildDate>Mon, 27 Jun 2016 23:47:16 -0400</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>installing R kernal for iPython</title>
+        <description>&lt;p&gt;Install the R kernal, see &lt;a href=&quot;https://irkernel.github.io/installation/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;On OSX, make sure you open the R in termal, not in R Studio, which doesn’t honor &lt;code class=&quot;highlighter-rouge&quot;&gt;$PATH&lt;/code&gt; changes in &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.bash_profile&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;install.packages(c(&#39;repr&#39;, &#39;pbdZMQ&#39;, &#39;devtools&#39;)) # repr is already on CRAN
+devtools::install_github(&#39;IRkernel/IRdisplay&#39;)
+devtools::install_github(&#39;IRkernel/IRkernel&#39;)
+IRkernel::installspec()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then restart or refresh the browser. It worked for me.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Jun 2016 19:47:15 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/06/installing-r-kernal-for-ipython.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/installing-r-kernal-for-ipython.html</guid>
+        
+        <category>python</category>
+        
+        <category>R</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>installing HDFStore</title>
+        <description>&lt;p&gt;Trying to read and process eye-tracking data currently stored in the HDF5 format. Pandas supports &lt;a href=&quot;http://pandas.pydata.org/pandas-docs/stable/io.html#io-hdf5&quot;&gt;HDFStore&lt;/a&gt;, see &lt;a href=&quot;http://glowingpython.blogspot.com/2014/08/quick-hdf5-with-pandas.html&quot;&gt;also here&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;The problem is that somehow the python/anaconda installation on my mac is out of date or out of sync. It won’t read the .hdf5 file, complaining the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import pandas as pd
+p&amp;gt;&amp;gt;&amp;gt; pd.HDFStore(&quot;test.hdf5&quot;)
+Traceback (most recent call last):
+  File &quot;&amp;lt;stdin&amp;gt;&quot;, line 1, in &amp;lt;module&amp;gt;
+  File &quot;/Users/garyfeng/anaconda/lib/python2.7/site-packages/pandas/io/pytables.py&quot;, line 389, in __init__
+    &#39;importing&#39;.format(ex=str(ex)))
+ImportError: HDFStore requires PyTables, &quot;dlopen(/Users/garyfeng/anaconda/lib/python2.7/site-packages/tables/utilsextension.so, 2): Library not loaded: @rpath/./libhdf5.10.dylib
+  Referenced from: /Users/garyfeng/anaconda/lib/python2.7/site-packages/tables/utilsextension.so
+  Reason: image not found&quot; problem importing
+&amp;gt;&amp;gt;&amp;gt; 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So I thought I’d reinstall PyTabls, using:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew tap homebrew/science
+brew install hdf5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This installed hdf5 version &lt;code class=&quot;highlighter-rouge&quot;&gt;1.8.16&lt;/code&gt;, after which python complains that hdf5 version conflicts – between &lt;code class=&quot;highlighter-rouge&quot;&gt;1.8.15_patch1&lt;/code&gt; and the newly installed &lt;code class=&quot;highlighter-rouge&quot;&gt;1.8.16&lt;/code&gt;. So I had to downgrade. &lt;/p&gt;
+
+&lt;p&gt;Found the &lt;code class=&quot;highlighter-rouge&quot;&gt;hdf5.rb&lt;/code&gt; old version at &lt;a href=&quot;https://raw.githubusercontent.com/Homebrew/homebrew-science/80f77e2ab89da3351c91af93fcf1f8c40b858628/hdf5.rb&quot;&gt;https://raw.githubusercontent.com/Homebrew/homebrew-science/80f77e2ab89da3351c91af93fcf1f8c40b858628/hdf5.rb&lt;/a&gt;. Copy the content. &lt;/p&gt;
+
+&lt;p&gt;Edit &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/Library/Taps/homebrew/homebrew-science/hdf5.rb&lt;/code&gt;, which after &lt;code class=&quot;highlighter-rouge&quot;&gt;brew tap&lt;/code&gt; is of version &lt;code class=&quot;highlighter-rouge&quot;&gt;1.8.16&lt;/code&gt;. Paste in the above older version, and make the following changes at the very top:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Hdf5 &amp;lt; Formula
+  desc &quot;File format designed to store large amounts of data&quot;
+  homepage &quot;http://www.hdfgroup.org/HDF5&quot;
+  url &quot;https://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.5-patch1/src/hdf5-1.8.15-patch1.tar.bz2&quot;
+  version &quot;1.8.15&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Save. Then back in terminal, do:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew unlink hdf5
+brew install hdf5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This now installs the older version &lt;code class=&quot;highlighter-rouge&quot;&gt;1.8.15&lt;/code&gt;. It also warns that we don’t have &lt;code class=&quot;highlighter-rouge&quot;&gt;sha256&lt;/code&gt;. It reminds us the SHA256:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Hdf5 &amp;lt; Formula
+  desc &quot;File format designed to store large amounts of data&quot;
+  homepage &quot;http://www.hdfgroup.org/HDF5&quot;
+  url &quot;https://www.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8.5-patch1/src/hdf5-1.8.15-patch1.tar.bz2&quot;
+  version &quot;1.8.15&quot;
+  sha256 &quot;1028be671e24dcd9826d3eabe6c0ebe674282368689dcf0f6bb5926bc8d3be25&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Done. However, &lt;code class=&quot;highlighter-rouge&quot;&gt;PyTables&lt;/code&gt; still doesn’t run. At least we have got HDF5 running. &lt;/p&gt;
+
+&lt;p&gt;After this, I renamed the &lt;code class=&quot;highlighter-rouge&quot;&gt;hdf5.rb&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;hdf5.1.8.15.rb&lt;/code&gt;, and restored the &lt;code class=&quot;highlighter-rouge&quot;&gt;v1.8.16&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;hdf5.rb&lt;/code&gt;. &lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Jun 2016 20:48:40 -0400</pubDate>
+        <link>http://garyfeng.github.io/2016/06/installing-hdfstore.html</link>
+        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/installing-hdfstore.html</guid>
+        
+        <category>python</category>
+        
+        <category>programming</category>
+        
+        
+      </item>
     
       <item>
         <title>Jupyter Notebook unit testing</title>
@@ -58,6 +158,10 @@
         <title>Notedown Example</title>
         <description>&lt;p&gt;The following is an output, from within a Jupyter Notebook. &lt;/p&gt;
 
+&lt;p&gt;It looks great on github, viewed as a markdown file. However, code blocks look terrible on the Jekyle blog site. The problems seem to have to do with the failure to process the ` ```{.python .input  n=53}` code. &lt;/p&gt;
+
+&lt;p&gt;Looking at Jekyl’s &lt;a href=&quot;https://jekyllrb.com/docs/posts/#highlighting-code-snippets&quot;&gt;document&lt;/a&gt; page, I need a different syntax to mark the code blocks.&lt;/p&gt;
+
 &lt;hr /&gt;
 
 &lt;h1 id=&quot;parsing-json-strings-in-pandas&quot;&gt;Parsing JSON strings in Pandas&lt;/h1&gt;
@@ -69,23 +173,23 @@ May, 2016&lt;/p&gt;
 &lt;h1 id=&quot;tocheading&quot;&gt;Table of Contents&lt;/h1&gt;
 &lt;div id=&quot;toc&quot;&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=53&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%%javascript&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$.getScript(&#39;https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js&#39;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;%%javascript
+$.getScript(&#39;https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=53&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
- &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;application/javascript&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;$.getScript(&#39;https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js&#39;)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-   &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text/plain&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;IPython.core.display.Javascript object&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;metadata&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;display_data&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
- &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[
+ {
+  &quot;data&quot;: {
+   &quot;application/javascript&quot;: &quot;$.getScript(&#39;https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js&#39;)&quot;,
+   &quot;text/plain&quot;: &quot;&amp;lt;IPython.core.display.Javascript object&amp;gt;&quot;
+  },
+  &quot;metadata&quot;: {},
+  &quot;output_type&quot;: &quot;display_data&quot;
+ }
+]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
 
@@ -111,39 +215,39 @@ double-quote in the JSON so we have to clear that first. We create 2 versions,
 one with the original “true” and the other replacing it with “True”, because the
 JSON method requires &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; while the AST method requires &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;```{.python .input  n=2}
-kstr = ‘{\
-    ““name””:”“text.change””,\
-    ““textDiff””:{\
-        ““diffs””:[{““edit””:”“INS””,”“pos”“:1,”“len”“:1,”“text””:”“m””}],\
-        ““textContext””:”“m^ “”,\
-        ““textLength”“:3},\
-        ““selection””:{\
-            ““selectedText””:””””,\
-            ““startPos”“:1,\
-            ““endPos”“:1,\
-            ““lenSelected”“:0,\
-            ““textSelected””:””””,\
-            ““isCollapsed”“:true\
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kstr = &#39;{\
+    &quot;&quot;name&quot;&quot;:&quot;&quot;text.change&quot;&quot;,\
+    &quot;&quot;textDiff&quot;&quot;:{\
+        &quot;&quot;diffs&quot;&quot;:[{&quot;&quot;edit&quot;&quot;:&quot;&quot;INS&quot;&quot;,&quot;&quot;pos&quot;&quot;:1,&quot;&quot;len&quot;&quot;:1,&quot;&quot;text&quot;&quot;:&quot;&quot;m&quot;&quot;}],\
+        &quot;&quot;textContext&quot;&quot;:&quot;&quot;m^ &quot;&quot;,\
+        &quot;&quot;textLength&quot;&quot;:3},\
+        &quot;&quot;selection&quot;&quot;:{\
+            &quot;&quot;selectedText&quot;&quot;:&quot;&quot;&quot;&quot;,\
+            &quot;&quot;startPos&quot;&quot;:1,\
+            &quot;&quot;endPos&quot;&quot;:1,\
+            &quot;&quot;lenSelected&quot;&quot;:0,\
+            &quot;&quot;textSelected&quot;&quot;:&quot;&quot;&quot;&quot;,\
+            &quot;&quot;isCollapsed&quot;&quot;:true\
         }\
-    }’&lt;/p&gt;
-
-&lt;h1 id=&quot;we-create-2-versions-one-with-the-original-true-and-the-other-replacing-it-with-true&quot;&gt;we create 2 versions, one with the original “true” and the other replacing it with “True”&lt;/h1&gt;
-&lt;p&gt;s1 = kstr.replace(“&quot;&quot;”, “&quot;”)
+    }&#39;
+# we create 2 versions, one with the original &quot;true&quot; and the other replacing it with &quot;True&quot;
+s1 = kstr.replace(&quot;\&quot;\&quot;&quot;, &quot;\&quot;&quot;)
 print s1
-s2 = kstr.replace(“&quot;&quot;”, “&quot;”).replace(“true”, “True”)
-print s2&lt;/p&gt;
+s2 = kstr.replace(&quot;\&quot;\&quot;&quot;, &quot;\&quot;&quot;).replace(&quot;true&quot;, &quot;True&quot;)
+print s2
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-```{.json .output n=2}
-[
- {
-  &quot;name&quot;: &quot;stdout&quot;,
-  &quot;output_type&quot;: &quot;stream&quot;,
-  &quot;text&quot;: &quot;{    \&quot;name\&quot;:\&quot;text.change\&quot;,    \&quot;textDiff\&quot;:{        \&quot;diffs\&quot;:[{\&quot;edit\&quot;:\&quot;INS\&quot;,\&quot;pos\&quot;:1,\&quot;len\&quot;:1,\&quot;text\&quot;:\&quot;m\&quot;}],        \&quot;textContext\&quot;:\&quot;m^ \&quot;,        \&quot;textLength\&quot;:3},        \&quot;selection\&quot;:{            \&quot;selectedText\&quot;:\&quot;\&quot;,            \&quot;startPos\&quot;:1,            \&quot;endPos\&quot;:1,            \&quot;lenSelected\&quot;:0,            \&quot;textSelected\&quot;:\&quot;\&quot;,            \&quot;isCollapsed\&quot;:true        }    }\n{    \&quot;name\&quot;:\&quot;text.change\&quot;,    \&quot;textDiff\&quot;:{        \&quot;diffs\&quot;:[{\&quot;edit\&quot;:\&quot;INS\&quot;,\&quot;pos\&quot;:1,\&quot;len\&quot;:1,\&quot;text\&quot;:\&quot;m\&quot;}],        \&quot;textContext\&quot;:\&quot;m^ \&quot;,        \&quot;textLength\&quot;:3},        \&quot;selection\&quot;:{            \&quot;selectedText\&quot;:\&quot;\&quot;,            \&quot;startPos\&quot;:1,            \&quot;endPos\&quot;:1,            \&quot;lenSelected\&quot;:0,            \&quot;textSelected\&quot;:\&quot;\&quot;,            \&quot;isCollapsed\&quot;:True        }    }\n&quot;
- }
-]
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stdout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;output_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;stream&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;{    \&quot;name\&quot;:\&quot;text.change\&quot;,    \&quot;textDiff\&quot;:{        \&quot;diffs\&quot;:[{\&quot;edit\&quot;:\&quot;INS\&quot;,\&quot;pos\&quot;:1,\&quot;len\&quot;:1,\&quot;text\&quot;:\&quot;m\&quot;}],        \&quot;textContext\&quot;:\&quot;m^ \&quot;,        \&quot;textLength\&quot;:3},        \&quot;selection\&quot;:{            \&quot;selectedText\&quot;:\&quot;\&quot;,            \&quot;startPos\&quot;:1,            \&quot;endPos\&quot;:1,            \&quot;lenSelected\&quot;:0,            \&quot;textSelected\&quot;:\&quot;\&quot;,            \&quot;isCollapsed\&quot;:true        }    }\n{    \&quot;name\&quot;:\&quot;text.change\&quot;,    \&quot;textDiff\&quot;:{        \&quot;diffs\&quot;:[{\&quot;edit\&quot;:\&quot;INS\&quot;,\&quot;pos\&quot;:1,\&quot;len\&quot;:1,\&quot;text\&quot;:\&quot;m\&quot;}],        \&quot;textContext\&quot;:\&quot;m^ \&quot;,        \&quot;textLength\&quot;:3},        \&quot;selection\&quot;:{            \&quot;selectedText\&quot;:\&quot;\&quot;,            \&quot;startPos\&quot;:1,            \&quot;endPos\&quot;:1,            \&quot;lenSelected\&quot;:0,            \&quot;textSelected\&quot;:\&quot;\&quot;,            \&quot;isCollapsed\&quot;:True        }    }\n&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+ &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;json&quot;&gt;JSON&lt;/h2&gt;
@@ -358,6 +462,7 @@ the flexibility of &lt;code class=&quot;highlighter-rouge&quot;&gt;dpath&lt;/cod
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.python&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.input&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=54&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;pip&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;notedown&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;notedown&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Parsing JSON strings in Pandas.ipynb&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;--to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2016-06-17-notedown example.md&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.output&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;n=54&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -371,7 +476,7 @@ the flexibility of &lt;code class=&quot;highlighter-rouge&quot;&gt;dpath&lt;/cod
 &lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 16 Jun 2016 11:32:34 -0400</pubDate>
+        <pubDate>Fri, 17 Jun 2016 11:32:34 -0400</pubDate>
         <link>http://garyfeng.github.io/2016/06/notedown-example.html</link>
         <guid isPermaLink="true">http://garyfeng.github.io/2016/06/notedown-example.html</guid>
         
@@ -461,46 +566,6 @@ the flexibility of &lt;code class=&quot;highlighter-rouge&quot;&gt;dpath&lt;/cod
         <guid isPermaLink="true">http://garyfeng.github.io/2016/06/webcam-based-eye-trackers-gazerecorder.html</guid>
         
         <category>eye-tracking</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Webcam-based eye-trackers to watch</title>
-        <description>&lt;p&gt;Several new papers on webcam-based eye-tracking:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.researchgate.net/publication/299490836_Building_a_Personalized_Auto-Calibrating_Eye_Tracker_from_User_Interactions&quot;&gt;PACE&lt;/a&gt;, CHI16, a desktop application that uses mouse movements to recalibrate gaze estimation, based on assumptions about where mouse movements and gaze are most likely to align.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://arxiv.org/abs/1504.06755&quot;&gt;TurkerGaze&lt;/a&gt;, including &lt;a href=&quot;http://turkergaze.cs.princeton.edu/supp.pdf&quot;&gt;supplemental materials&lt;/a&gt; that includes some results on the mean-shift methods for fixation detection. &lt;a href=&quot;https://github.com/PrincetonVision/TurkerGaze&quot;&gt;Github repo&lt;/a&gt;. Aiming to estimate visual saliency. &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jeffhuang.com/Final_WebGazer_IJCAI16.pdf&quot;&gt;WebGazer&lt;/a&gt;, IJCAI16, from &lt;a href=&quot;http://jeffhuang.com/&quot;&gt;Jeff Huang&lt;/a&gt;’s group at Brown, with online demo at &lt;a href=&quot;http://webgazer.cs.brown.edu/&quot;&gt;http://webgazer.cs.brown.edu/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Essentially the same architecture here – face tracking ==&amp;gt; getting the eyes ==&amp;gt; eye feature extraction ==&amp;gt; use ridge regression or other methods to calibrate&lt;/p&gt;
-</description>
-        <pubDate>Thu, 02 Jun 2016 04:48:13 -0400</pubDate>
-        <link>http://garyfeng.github.io/2016/06/webcam-based-eye-trackers-to-watch.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/webcam-based-eye-trackers-to-watch.html</guid>
-        
-        <category>eye-tracking</category>
-        
-        <category>multimodal</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>coming soon</title>
-        <description>&lt;p&gt;According to &lt;a href=&quot;http://community.plot.ly/t/set-image-as-background-python/864&quot;&gt;this&lt;/a&gt; from April, 2016, “Background images are coming to Plotly in the next few months.”&lt;/p&gt;
-</description>
-        <pubDate>Wed, 01 Jun 2016 11:11:53 -0400</pubDate>
-        <link>http://garyfeng.github.io/2016/06/background-images-in-plot-ly-coming-soon.html</link>
-        <guid isPermaLink="true">http://garyfeng.github.io/2016/06/background-images-in-plot-ly-coming-soon.html</guid>
-        
-        <category>viz</category>
-        
-        <category>python</category>
         
         
       </item>

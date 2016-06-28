@@ -58,11 +58,15 @@
 
   <header class="post-header">
     <h1 class="post-title">Notedown Example</h1>
-    <p class="post-meta">Jun 16, 2016</p>
+    <p class="post-meta">Jun 17, 2016</p>
   </header>
 
   <article class="post-content">
     <p>The following is an output, from within a Jupyter Notebook. </p>
+
+<p>It looks great on github, viewed as a markdown file. However, code blocks look terrible on the Jekyle blog site. The problems seem to have to do with the failure to process the ` ```{.python .input  n=53}` code. </p>
+
+<p>Looking at Jekyl’s <a href="https://jekyllrb.com/docs/posts/#highlighting-code-snippets">document</a> page, I need a different syntax to mark the code blocks.</p>
 
 <hr />
 
@@ -75,23 +79,23 @@ May, 2016</p>
 <h1 id="tocheading">Table of Contents</h1>
 <div id="toc"></div>
 
-<p><code class="highlighter-rouge"><span class="p">{</span><span class="err">.python</span><span class="w"> </span><span class="err">.input</span><span class="w">  </span><span class="err">n=53</span><span class="p">}</span><span class="w">
-</span><span class="err">%%javascript</span><span class="w">
-</span><span class="err">$.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')</span><span class="w">
-</span></code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>%%javascript
+$.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')
+</code></pre>
+</div>
 
-<p><code class="highlighter-rouge"><span class="p">{</span><span class="err">.json</span><span class="w"> </span><span class="err">.output</span><span class="w"> </span><span class="err">n=53</span><span class="p">}</span><span class="w">
-</span><span class="p">[</span><span class="w">
- </span><span class="p">{</span><span class="w">
-  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-   </span><span class="nt">"application/javascript"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')"</span><span class="p">,</span><span class="w">
-   </span><span class="nt">"text/plain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;IPython.core.display.Javascript object&gt;"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-  </span><span class="nt">"output_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"display_data"</span><span class="w">
- </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>[
+ {
+  "data": {
+   "application/javascript": "$.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')",
+   "text/plain": "&lt;IPython.core.display.Javascript object&gt;"
+  },
+  "metadata": {},
+  "output_type": "display_data"
+ }
+]
+</code></pre>
+</div>
 
 <h1 id="introduction">Introduction</h1>
 
@@ -117,39 +121,39 @@ double-quote in the JSON so we have to clear that first. We create 2 versions,
 one with the original “true” and the other replacing it with “True”, because the
 JSON method requires <code class="highlighter-rouge">true</code> while the AST method requires <code class="highlighter-rouge">True</code>.</p>
 
-<p>```{.python .input  n=2}
-kstr = ‘{\
-    ““name””:”“text.change””,\
-    ““textDiff””:{\
-        ““diffs””:[{““edit””:”“INS””,”“pos”“:1,”“len”“:1,”“text””:”“m””}],\
-        ““textContext””:”“m^ “”,\
-        ““textLength”“:3},\
-        ““selection””:{\
-            ““selectedText””:””””,\
-            ““startPos”“:1,\
-            ““endPos”“:1,\
-            ““lenSelected”“:0,\
-            ““textSelected””:””””,\
-            ““isCollapsed”“:true\
+<div class="highlighter-rouge"><pre class="highlight"><code>kstr = '{\
+    ""name"":""text.change"",\
+    ""textDiff"":{\
+        ""diffs"":[{""edit"":""INS"",""pos"":1,""len"":1,""text"":""m""}],\
+        ""textContext"":""m^ "",\
+        ""textLength"":3},\
+        ""selection"":{\
+            ""selectedText"":"""",\
+            ""startPos"":1,\
+            ""endPos"":1,\
+            ""lenSelected"":0,\
+            ""textSelected"":"""",\
+            ""isCollapsed"":true\
         }\
-    }’</p>
-
-<h1 id="we-create-2-versions-one-with-the-original-true-and-the-other-replacing-it-with-true">we create 2 versions, one with the original “true” and the other replacing it with “True”</h1>
-<p>s1 = kstr.replace(“""”, “"”)
+    }'
+# we create 2 versions, one with the original "true" and the other replacing it with "True"
+s1 = kstr.replace("\"\"", "\"")
 print s1
-s2 = kstr.replace(“""”, “"”).replace(“true”, “True”)
-print s2</p>
+s2 = kstr.replace("\"\"", "\"").replace("true", "True")
+print s2
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-```{.json .output n=2}
-[
- {
-  "name": "stdout",
-  "output_type": "stream",
-  "text": "{    \"name\":\"text.change\",    \"textDiff\":{        \"diffs\":[{\"edit\":\"INS\",\"pos\":1,\"len\":1,\"text\":\"m\"}],        \"textContext\":\"m^ \",        \"textLength\":3},        \"selection\":{            \"selectedText\":\"\",            \"startPos\":1,            \"endPos\":1,            \"lenSelected\":0,            \"textSelected\":\"\",            \"isCollapsed\":true        }    }\n{    \"name\":\"text.change\",    \"textDiff\":{        \"diffs\":[{\"edit\":\"INS\",\"pos\":1,\"len\":1,\"text\":\"m\"}],        \"textContext\":\"m^ \",        \"textLength\":3},        \"selection\":{            \"selectedText\":\"\",            \"startPos\":1,            \"endPos\":1,            \"lenSelected\":0,            \"textSelected\":\"\",            \"isCollapsed\":True        }    }\n"
- }
-]
 </code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">.json</span><span class="w"> </span><span class="err">.output</span><span class="w"> </span><span class="err">n=2</span><span class="p">}</span><span class="w">
+</span><span class="p">[</span><span class="w">
+ </span><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stdout"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"output_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stream"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{    \"name\":\"text.change\",    \"textDiff\":{        \"diffs\":[{\"edit\":\"INS\",\"pos\":1,\"len\":1,\"text\":\"m\"}],        \"textContext\":\"m^ \",        \"textLength\":3},        \"selection\":{            \"selectedText\":\"\",            \"startPos\":1,            \"endPos\":1,            \"lenSelected\":0,            \"textSelected\":\"\",            \"isCollapsed\":true        }    }\n{    \"name\":\"text.change\",    \"textDiff\":{        \"diffs\":[{\"edit\":\"INS\",\"pos\":1,\"len\":1,\"text\":\"m\"}],        \"textContext\":\"m^ \",        \"textLength\":3},        \"selection\":{            \"selectedText\":\"\",            \"startPos\":1,            \"endPos\":1,            \"lenSelected\":0,            \"textSelected\":\"\",            \"isCollapsed\":True        }    }\n"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
 </div>
 
 <h2 id="json">JSON</h2>
@@ -364,6 +368,7 @@ the flexibility of <code class="highlighter-rouge">dpath</code>. <code class="hi
 
 <p><code class="highlighter-rouge"><span class="p">{</span><span class="err">.python</span><span class="w"> </span><span class="err">.input</span><span class="w">  </span><span class="err">n=54</span><span class="p">}</span><span class="w">
 </span><span class="err">!</span><span class="w"> </span><span class="err">pip</span><span class="w"> </span><span class="err">install</span><span class="w"> </span><span class="err">notedown</span><span class="w">
+</span><span class="err">!</span><span class="w"> </span><span class="err">notedown</span><span class="w"> </span><span class="s2">"Parsing JSON strings in Pandas.ipynb"</span><span class="w"> </span><span class="err">--to</span><span class="w"> </span><span class="err">markdown</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="s2">"2016-06-17-notedown example.md"</span><span class="w">
 </span></code></p>
 
 <p><code class="highlighter-rouge"><span class="p">{</span><span class="err">.json</span><span class="w"> </span><span class="err">.output</span><span class="w"> </span><span class="err">n=54</span><span class="p">}</span><span class="w">
